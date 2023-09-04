@@ -64,7 +64,7 @@ print.validate_result <- function(x){
 
   cat("### Test output:\n")
   cat("<!-- TAGSTART:r_output -->\n")
-  print(knitr::kable(x$evidence, format = "pipe"))
+  print(knitr::kable(x$evidence[, c("file", "context", "test", "nb", "passed", "skipped", "error", "warning")], format = "pipe", row.names = FALSE))
   cat("<!-- TAGEND:r_output -->\n")
 
 
@@ -76,7 +76,7 @@ print.validate_result <- function(x){
   cat(x$session$OS)
   cat("\n<!-- TAGEND:r_os -->\n")
   cat("<!-- TAGSTART:r_loaded -->\n")
-  print(knitr::kable(x$session$loaded, format = "pipe"))
+  print(knitr::kable(x$session$loaded, format = "pipe", row.names = FALSE))
   cat("\n<!-- TAGEND:r_loaded -->\n")
 
 }
