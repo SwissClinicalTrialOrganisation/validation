@@ -46,92 +46,87 @@ test("presize")
 #> 
 #> [ FAIL 1 | WARN 0 | SKIP 0 | PASS 2 ]
 #> Loading required package: gh
-#> $who
-#> [1] "aghaynes"
+#> ## Function validation
+#> ### Package: 
+#> <!-- TAGSTART:package -->
+#> presize
+#> <!-- TAGEND:package -->
 #> 
-#> $pkg
-#> [1] "presize"
+#> ### Function tested:
+#> <!-- TAGSTART:function -->
+#> Demo tests for presize - expected confidence interval width from prec_mean
+#> <!-- TAGEND:function -->
 #> 
-#> $when
-#> [1] "2023-09-05 11:55:07 CEST"
+#> ### Test results:
+#> Did the function pass or fail?
+#> <!-- TAGSTART:result -->
+#> _Fail_
+#> <!-- TAGEND:result -->
 #> 
-#> $what
-#> [1] "Demo tests for presize"                             
-#> [2] "- expected confidence interval width from prec_mean"
+#> ### Test output:
+#> <!-- TAGSTART:r_output -->
 #> 
-#> $result
-#> [1] FALSE
 #> 
-#> $evidence
-#>             file context                 test nb failed skipped error warning
-#> 1 test-presize.R presize prec_mean conf.width  1      0   FALSE FALSE       0
-#> 2 test-presize.R presize        prec_mean lwr  1      0   FALSE FALSE       0
-#> 3 test-presize.R presize        prec_mean upr  1      1   FALSE FALSE       0
-#>   user system real passed
-#> 1 0.01      0 0.01      1
-#> 2 0.02      0 0.02      1
-#> 3 0.01      0 0.01      0
-#>                                                                                                                       result
-#> 1                            x$conf.width not equal to 0.936.\nEqual, 8, 3, 8, 54, 3, 54, 8, 8, 58, 59, prec_mean conf.width
-#> 2                                      x$lwr not equal to 0.531.\nEqual, 11, 3, 11, 47, 3, 47, 11, 11, 58, 59, prec_mean lwr
-#> 3 x$lwr not equal to 1.468.\n1/1 mismatches\n[1] 0.532 - 1.47 == -0.936, 14, 3, 14, 47, 3, 47, 14, 14, 58, 59, prec_mean upr
-#> 
-#> $session
-#> $session$R
-#> [1] "R version 4.2.1 (2022-06-23 ucrt)"
-#> 
-#> $session$OS
+#> |file           |context |test                 | nb| passed|skipped |error | warning|
+#> |:--------------|:-------|:--------------------|--:|------:|:-------|:-----|-------:|
+#> |test-presize.R |presize |prec_mean conf.width |  1|      1|FALSE   |FALSE |       0|
+#> |test-presize.R |presize |prec_mean lwr        |  1|      1|FALSE   |FALSE |       0|
+#> |test-presize.R |presize |prec_mean upr        |  1|      0|FALSE   |FALSE |       0|
+#> <!-- TAGEND:r_output -->
+#> ### SessionInfo:
+#> <!-- TAGSTART:r_version -->
+#> R version 4.2.1 (2022-06-23 ucrt)
+#> <!-- TAGEND:r_version -->
+#> <!-- TAGSTART:r_os -->
 #> Windows 10 x64 (build 19043)
-#> 
-#> $session$loaded
-#>  package     * version date (UTC) lib source
-#>  brio          1.1.3   2021-11-30 [1] CRAN (R 4.2.3)
-#>  cli           3.6.1   2023-03-23 [1] CRAN (R 4.2.3)
-#>  crayon        1.5.2   2022-09-29 [1] CRAN (R 4.2.3)
-#>  curl          5.0.0   2023-01-12 [1] CRAN (R 4.2.3)
-#>  desc          1.4.2   2022-09-08 [1] CRAN (R 4.2.3)
-#>  digest        0.6.31  2022-12-11 [1] CRAN (R 4.2.3)
-#>  dplyr         1.1.1   2023-03-22 [1] CRAN (R 4.2.3)
-#>  evaluate      0.20    2023-01-17 [1] CRAN (R 4.2.2)
-#>  fansi         1.0.4   2023-01-22 [1] CRAN (R 4.2.3)
-#>  fastmap       1.1.1   2023-02-24 [1] CRAN (R 4.2.3)
-#>  generics      0.1.3   2022-07-05 [1] CRAN (R 4.2.3)
-#>  gh          * 1.3.0   2021-04-30 [2] CRAN (R 4.2.0)
-#>  gitcreds      0.1.1   2020-12-04 [2] CRAN (R 4.2.0)
-#>  glue          1.6.2   2022-02-24 [1] CRAN (R 4.2.3)
-#>  htmltools     0.5.5   2023-03-23 [1] CRAN (R 4.2.3)
-#>  httr          1.4.5   2023-02-24 [1] CRAN (R 4.2.3)
-#>  jsonlite      1.8.4   2022-12-06 [1] CRAN (R 4.2.3)
-#>  kappaSize     1.2     2018-11-26 [2] CRAN (R 4.2.0)
-#>  knitr         1.42    2023-01-25 [1] CRAN (R 4.2.3)
-#>  lifecycle     1.0.3   2022-10-07 [1] CRAN (R 4.2.3)
-#>  magrittr      2.0.3   2022-03-30 [1] CRAN (R 4.2.3)
-#>  pillar        1.9.0   2023-03-22 [1] CRAN (R 4.2.3)
-#>  pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.2.3)
-#>  pkgload       1.3.2   2022-11-16 [1] CRAN (R 4.2.3)
-#>  presize       0.3.7   2023-02-27 [2] CRAN (R 4.2.3)
-#>  R6            2.5.1   2021-08-19 [1] CRAN (R 4.2.3)
-#>  rlang         1.1.0   2023-03-14 [1] CRAN (R 4.2.3)
-#>  rmarkdown     2.21    2023-03-26 [1] CRAN (R 4.2.3)
-#>  rprojroot     2.0.3   2022-04-02 [1] CRAN (R 4.2.3)
-#>  rstudioapi    0.14    2022-08-22 [1] CRAN (R 4.2.3)
-#>  sessioninfo   1.2.2   2021-12-06 [2] CRAN (R 4.2.0)
-#>  testthat    * 3.1.7   2023-03-12 [1] CRAN (R 4.2.3)
-#>  tibble        3.2.1   2023-03-20 [1] CRAN (R 4.2.3)
-#>  tidyselect    1.2.0   2022-10-10 [1] CRAN (R 4.2.3)
-#>  utf8          1.2.3   2023-01-31 [1] CRAN (R 4.2.3)
-#>  validation  * 0.1.0   2023-09-05 [1] local
-#>  vctrs         0.6.2   2023-04-19 [1] CRAN (R 4.2.3)
-#>  withr         2.5.0   2022-03-03 [1] CRAN (R 4.2.3)
-#>  xfun          0.38    2023-03-24 [1] CRAN (R 4.2.3)
-#>  yaml          2.3.7   2023-01-23 [1] CRAN (R 4.2.3)
-#> 
-#>  [1] C:/Users/haynes/AppData/Local/R/win-library/4.2
-#>  [2] C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library
+#> <!-- TAGEND:r_os -->
+#> <!-- TAGSTART:r_loaded -->
 #> 
 #> 
-#> attr(,"class")
-#> [1] "validate_result" "list"
+#> |package     |ondiskversion |loadedversion |path                                                                 |loadedpath                                                           |attached |is_base |date       |source         |md5ok |library                                                  |
+#> |:-----------|:-------------|:-------------|:--------------------------------------------------------------------|:--------------------------------------------------------------------|:--------|:-------|:----------|:--------------|:-----|:--------------------------------------------------------|
+#> |brio        |1.1.3         |1.1.3         |C:/Users/haynes/AppData/Local/R/win-library/4.2/brio                 |C:/Users/haynes/AppData/Local/R/win-library/4.2/brio                 |FALSE    |FALSE   |2021-11-30 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |cli         |3.6.1         |3.6.1         |C:/Users/haynes/AppData/Local/R/win-library/4.2/cli                  |C:/Users/haynes/AppData/Local/R/win-library/4.2/cli                  |FALSE    |FALSE   |2023-03-23 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |crayon      |1.5.2         |1.5.2         |C:/Users/haynes/AppData/Local/R/win-library/4.2/crayon               |C:/Users/haynes/AppData/Local/R/win-library/4.2/crayon               |FALSE    |FALSE   |2022-09-29 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |curl        |5.0.0         |5.0.0         |C:/Users/haynes/AppData/Local/R/win-library/4.2/curl                 |C:/Users/haynes/AppData/Local/R/win-library/4.2/curl                 |FALSE    |FALSE   |2023-01-12 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |desc        |1.4.2         |1.4.2         |C:/Users/haynes/AppData/Local/R/win-library/4.2/desc                 |C:/Users/haynes/AppData/Local/R/win-library/4.2/desc                 |FALSE    |FALSE   |2022-09-08 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |digest      |0.6.31        |0.6.31        |C:/Users/haynes/AppData/Local/R/win-library/4.2/digest               |C:/Users/haynes/AppData/Local/R/win-library/4.2/digest               |FALSE    |FALSE   |2022-12-11 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |dplyr       |1.1.1         |1.1.1         |C:/Users/haynes/AppData/Local/R/win-library/4.2/dplyr                |C:/Users/haynes/AppData/Local/R/win-library/4.2/dplyr                |FALSE    |FALSE   |2023-03-22 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |evaluate    |0.20          |0.20          |C:/Users/haynes/AppData/Local/R/win-library/4.2/evaluate             |C:/Users/haynes/AppData/Local/R/win-library/4.2/evaluate             |FALSE    |FALSE   |2023-01-17 |CRAN (R 4.2.2) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |fansi       |1.0.4         |1.0.4         |C:/Users/haynes/AppData/Local/R/win-library/4.2/fansi                |C:/Users/haynes/AppData/Local/R/win-library/4.2/fansi                |FALSE    |FALSE   |2023-01-22 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |fastmap     |1.1.1         |1.1.1         |C:/Users/haynes/AppData/Local/R/win-library/4.2/fastmap              |C:/Users/haynes/AppData/Local/R/win-library/4.2/fastmap              |FALSE    |FALSE   |2023-02-24 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |generics    |0.1.3         |0.1.3         |C:/Users/haynes/AppData/Local/R/win-library/4.2/generics             |C:/Users/haynes/AppData/Local/R/win-library/4.2/generics             |FALSE    |FALSE   |2022-07-05 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |gh          |1.3.0         |1.3.0         |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library/gh          |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library/gh          |TRUE     |FALSE   |2021-04-30 |CRAN (R 4.2.0) |TRUE  |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library |
+#> |gitcreds    |0.1.1         |0.1.1         |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library/gitcreds    |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library/gitcreds    |FALSE    |FALSE   |2020-12-04 |CRAN (R 4.2.0) |TRUE  |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library |
+#> |glue        |1.6.2         |1.6.2         |C:/Users/haynes/AppData/Local/R/win-library/4.2/glue                 |C:/Users/haynes/AppData/Local/R/win-library/4.2/glue                 |FALSE    |FALSE   |2022-02-24 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |htmltools   |0.5.5         |0.5.5         |C:/Users/haynes/AppData/Local/R/win-library/4.2/htmltools            |C:/Users/haynes/AppData/Local/R/win-library/4.2/htmltools            |FALSE    |FALSE   |2023-03-23 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |httr        |1.4.5         |1.4.5         |C:/Users/haynes/AppData/Local/R/win-library/4.2/httr                 |C:/Users/haynes/AppData/Local/R/win-library/4.2/httr                 |FALSE    |FALSE   |2023-02-24 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |jsonlite    |1.8.4         |1.8.4         |C:/Users/haynes/AppData/Local/R/win-library/4.2/jsonlite             |C:/Users/haynes/AppData/Local/R/win-library/4.2/jsonlite             |FALSE    |FALSE   |2022-12-06 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |kappaSize   |1.2           |1.2           |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library/kappaSize   |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library/kappaSize   |FALSE    |FALSE   |2018-11-26 |CRAN (R 4.2.0) |TRUE  |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library |
+#> |knitr       |1.42          |1.42          |C:/Users/haynes/AppData/Local/R/win-library/4.2/knitr                |C:/Users/haynes/AppData/Local/R/win-library/4.2/knitr                |FALSE    |FALSE   |2023-01-25 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |lifecycle   |1.0.3         |1.0.3         |C:/Users/haynes/AppData/Local/R/win-library/4.2/lifecycle            |C:/Users/haynes/AppData/Local/R/win-library/4.2/lifecycle            |FALSE    |FALSE   |2022-10-07 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |magrittr    |2.0.3         |2.0.3         |C:/Users/haynes/AppData/Local/R/win-library/4.2/magrittr             |C:/Users/haynes/AppData/Local/R/win-library/4.2/magrittr             |FALSE    |FALSE   |2022-03-30 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |pillar      |1.9.0         |1.9.0         |C:/Users/haynes/AppData/Local/R/win-library/4.2/pillar               |C:/Users/haynes/AppData/Local/R/win-library/4.2/pillar               |FALSE    |FALSE   |2023-03-22 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |pkgconfig   |2.0.3         |2.0.3         |C:/Users/haynes/AppData/Local/R/win-library/4.2/pkgconfig            |C:/Users/haynes/AppData/Local/R/win-library/4.2/pkgconfig            |FALSE    |FALSE   |2019-09-22 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |pkgload     |1.3.2         |1.3.2         |C:/Users/haynes/AppData/Local/R/win-library/4.2/pkgload              |C:/Users/haynes/AppData/Local/R/win-library/4.2/pkgload              |FALSE    |FALSE   |2022-11-16 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |presize     |0.3.7         |0.3.7         |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library/presize     |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library/presize     |FALSE    |FALSE   |2023-02-27 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library |
+#> |R6          |2.5.1         |2.5.1         |C:/Users/haynes/AppData/Local/R/win-library/4.2/R6                   |C:/Users/haynes/AppData/Local/R/win-library/4.2/R6                   |FALSE    |FALSE   |2021-08-19 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |rlang       |1.1.0         |1.1.0         |C:/Users/haynes/AppData/Local/R/win-library/4.2/rlang                |C:/Users/haynes/AppData/Local/R/win-library/4.2/rlang                |FALSE    |FALSE   |2023-03-14 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |rmarkdown   |2.21          |2.21          |C:/Users/haynes/AppData/Local/R/win-library/4.2/rmarkdown            |C:/Users/haynes/AppData/Local/R/win-library/4.2/rmarkdown            |FALSE    |FALSE   |2023-03-26 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |rprojroot   |2.0.3         |2.0.3         |C:/Users/haynes/AppData/Local/R/win-library/4.2/rprojroot            |C:/Users/haynes/AppData/Local/R/win-library/4.2/rprojroot            |FALSE    |FALSE   |2022-04-02 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |rstudioapi  |0.14          |0.14          |C:/Users/haynes/AppData/Local/R/win-library/4.2/rstudioapi           |C:/Users/haynes/AppData/Local/R/win-library/4.2/rstudioapi           |FALSE    |FALSE   |2022-08-22 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |sessioninfo |1.2.2         |1.2.2         |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library/sessioninfo |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library/sessioninfo |FALSE    |FALSE   |2021-12-06 |CRAN (R 4.2.0) |TRUE  |C:/Users/haynes/AppData/Local/Programs/R/R-4.2.1/library |
+#> |testthat    |3.1.7         |3.1.7         |C:/Users/haynes/AppData/Local/R/win-library/4.2/testthat             |C:/Users/haynes/AppData/Local/R/win-library/4.2/testthat             |TRUE     |FALSE   |2023-03-12 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |tibble      |3.2.1         |3.2.1         |C:/Users/haynes/AppData/Local/R/win-library/4.2/tibble               |C:/Users/haynes/AppData/Local/R/win-library/4.2/tibble               |FALSE    |FALSE   |2023-03-20 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |tidyselect  |1.2.0         |1.2.0         |C:/Users/haynes/AppData/Local/R/win-library/4.2/tidyselect           |C:/Users/haynes/AppData/Local/R/win-library/4.2/tidyselect           |FALSE    |FALSE   |2022-10-10 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |utf8        |1.2.3         |1.2.3         |C:/Users/haynes/AppData/Local/R/win-library/4.2/utf8                 |C:/Users/haynes/AppData/Local/R/win-library/4.2/utf8                 |FALSE    |FALSE   |2023-01-31 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |validation  |0.1.0         |0.1.0         |C:/Users/haynes/AppData/Local/R/win-library/4.2/validation           |C:/Users/haynes/AppData/Local/R/win-library/4.2/validation           |TRUE     |FALSE   |2023-09-05 |local          |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |vctrs       |0.6.2         |0.6.2         |C:/Users/haynes/AppData/Local/R/win-library/4.2/vctrs                |C:/Users/haynes/AppData/Local/R/win-library/4.2/vctrs                |FALSE    |FALSE   |2023-04-19 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |withr       |2.5.0         |2.5.0         |C:/Users/haynes/AppData/Local/R/win-library/4.2/withr                |C:/Users/haynes/AppData/Local/R/win-library/4.2/withr                |FALSE    |FALSE   |2022-03-03 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |xfun        |0.38          |0.38          |C:/Users/haynes/AppData/Local/R/win-library/4.2/xfun                 |C:/Users/haynes/AppData/Local/R/win-library/4.2/xfun                 |FALSE    |FALSE   |2023-03-24 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> |yaml        |2.3.7         |2.3.7         |C:/Users/haynes/AppData/Local/R/win-library/4.2/yaml                 |C:/Users/haynes/AppData/Local/R/win-library/4.2/yaml                 |FALSE    |FALSE   |2023-01-23 |CRAN (R 4.2.3) |TRUE  |C:/Users/haynes/AppData/Local/R/win-library/4.2          |
+#> 
+#> <!-- TAGEND:r_loaded -->
 ```
 
 The output of this function is a string which can be copied and pasted
@@ -152,7 +147,7 @@ package.
 The `setup-package.R` file installs, updates and/or loads the package
 being tested and any other relevant steps (e.g. loading a dataset).
 
-`info.txt` contains a plain text description of the tests
+`info.txt` contains a plain text description of the tests.
 
 test-`somename`.R contains the tests themselves. Tests should be written
 using `testthat` syntax, e.g.

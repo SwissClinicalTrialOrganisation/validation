@@ -55,7 +55,7 @@ All tests are stored in `inst/tests` in package specific folders. E.g. the `inst
 
 The `setup-package.R` file installs, updates and/or loads the package being tested and any other relevant steps (e.g. loading a dataset).
 
-`info.txt` contains a plain text description of the tests
+`info.txt` contains a plain text description of the tests.
 
 test-`somename`.R contains the tests themselves. Tests should be written using `testthat` syntax, e.g.
 
