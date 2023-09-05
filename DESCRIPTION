@@ -14,6 +14,7 @@ Imports:
     dplyr,
     glue,
     sessioninfo,
+    testthat,
     valtools
 RoxygenNote: 7.2.3
 Suggests: 
@@ -24,3 +25,5 @@ Suggests:
     magrittr,
     devtools
 VignetteBuilder: knitr
+URL: https://github.com/aghaynes/validation
+BugReports: https://github.com/aghaynes/validation/issues

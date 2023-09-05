@@ -1,6 +1,13 @@
-
-
-
+#' Run all tests for a given package
+#' The output of this function can be copy/pasted to a github issue
+#'
+#' @param pkg package name as a string
+#'
+#' @return Text printed directly to the console
+#' @export
+#'
+#' @examples
+#' test("presize")
 test <- function(pkg){
 
   testres <- testthat::test_dir(
@@ -78,5 +85,25 @@ print.validate_result <- function(x){
   cat("<!-- TAGSTART:r_loaded -->\n")
   print(knitr::kable(x$session$loaded, format = "pipe", row.names = FALSE))
   cat("\n<!-- TAGEND:r_loaded -->\n")
+
+
+
+}
+
+to_gh <- function(x){
+  temp <- tempfile()
+  sink(temp)
+  print(x)
+  sink()
+  text <- readLines(temp)
+
+  repo <- "aghaynes/pkg_validation"
+  issues <- gh::gh(repo = repo,
+                   endpoint = "POST /repos/:repo/issues",
+                   title = glue::glue("[Function validation]: {x$pkg} from {x$pkg} version {x$pkg}"),
+                   body = paste(text, collapse = "\n"),
+                   "X-GitHub-Api-Version" = "2022-11-28",
+                   labels = '["function","triage"]'
+                   )
 
 }

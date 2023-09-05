@@ -2,9 +2,12 @@
 
 S3method(print,sctovalidity)
 export(check_session)
+export(render_val_report)
+export(test)
 importFrom(crayon,red)
 importFrom(crayon,yellow)
 importFrom(dplyr,filter)
 importFrom(dplyr,left_join)
 importFrom(glue,glue)
 importFrom(sessioninfo,package_info)
+importFrom(xfun,Rscript_call)
