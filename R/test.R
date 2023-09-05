@@ -51,6 +51,7 @@ test <- function(pkg){
   return(out)
 }
 
+#' @export
 print.validate_result <- function(x){
   cat("## Function validation\n")
 
