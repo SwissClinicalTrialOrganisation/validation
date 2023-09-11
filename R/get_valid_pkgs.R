@@ -32,25 +32,6 @@ get_valid_pkgs <- function(){
   return(out)
 }
 
-get_labels <- function(issue){
-  issue$labels |>
-    purrr::map(~ .x$name) |>
-    unlist()
-}
-
-is_ <- function(issue, what){
-  issue |>
-    purrr::map(get_labels) |>
-    purrr::map_lgl(~ what %in% .x)
-}
-
-is_package <- function(issues){
-  issues |> is_("package")
-}
-
-is_approved <- function(issues){
-  issues |> is_("approved")
-}
 
 
 extract_elements_pkg <- function(issue){
