@@ -76,6 +76,8 @@ extract_elements_pkg <- function(issue){
                                               ))
   out <- as.list(elements$answer)
   names(out) <- elements$question
+  url <- issue$url |> stringr::str_replace("api.github.com/repos", "github.com")
+  out$issue_url <- url
 
   return(out)
 }
