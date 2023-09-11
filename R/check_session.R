@@ -1,10 +1,12 @@
 #' Check a sessions loaded packages against the validated packages list
+#' @param attached_only logical, should all loaded packages be shown (FALSE; default), or only those that are attached (TRUE)
+#' @param approved_only logical, should only validated (approved) packages be shown (TRUE; default), or also those awaiting approval (FALSE)
 #' @export
 #' @importFrom sessioninfo package_info
 #' @importFrom dplyr filter left_join
 #' @examples
 #' check_session()
-check_session <- function(attached_only = FALSE){
+check_session <- function(attached_only = FALSE, approved_only = TRUE){
   session <- package_info()
 
   loaded <- session |>
@@ -14,7 +16,7 @@ check_session <- function(attached_only = FALSE){
   if(attached_only)
     loaded <- loaded |> filter(attached)
 
-  validated <- get_valid_pkgs()
+  validated <- get_valid_pkgs(approved_only)
 
 
   loaded |> filter(package %in% validated$package)
