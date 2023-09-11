@@ -27,6 +27,7 @@ get_valid_pkgs <- function(){
   pkgs <- pkgs[is_approved(pkgs)]
 
   out <- pkgs |> purrr::map(extract_elements_pkg)
+  out <- pkgs |> purrr::map(extract_elements_pkg) |> dplyr::bind_rows()
 
   return(out)
 }
