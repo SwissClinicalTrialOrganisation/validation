@@ -18,37 +18,7 @@ This package contains the tests for R packages that form the core of the R packa
 
 Where this package deviates from a normal R package is in the tests for other packages (most packages only contain tests for themselves). The tests for other packages are stored in the `inst/tests` directory, and are named according to the package they are testing (e.g. the `inst/tests/presize` directory contains tests for the `presize` package). 
 
-```
-- validation
-  - DESCRIPTION - package description file, including dependencies
-  - inst        
-    - tests     - *directory containing tests for other packages*
-      - presize 
-        - info.txt
-        - setup-presize.R
-        - test-presize.R
-        - ...
-      - another_package
-        - info.txt
-        - setup-another_package.R
-        - test-another_package.R
-        - ...
-      - ...
-  - NAMESPACE - defines which functions to export and which to import from other packages
-  - R         - contains the R code for the package
-    - test.R  - code for a specific function (or set of related functions)
-    - ...
-  - vignettes - contains the vignettes for the package
-    - contribute.Rmd - the Rmd file for this vignette
-    - ...
-  - Readme.Rmd  - a Rmd for the github landing page 
-  - Readme.md   - a compiled version of Readme.Rmd 
-  - validation.Rproj - RStudio project file
-  - .gitignore - a list of files that git should ignore
-  - .Rbuildignore - a list of files that R should ignore when building the package
-```
-
-How an R package is structured is beyond the scope of this vignette. [R Packages](https://r-pkgs.org/), by Hadley and Bryan provides a comprehensive overview of R package structure and development. 
+The most important parts of the package for adding new tests are `DESCRIPTION` and `inst/tests`. How an R package is structured is beyond the scope of this vignette. [R Packages](https://r-pkgs.org/), by Hadley and Bryan provides a comprehensive overview of R package structure and development. 
 
 
 ## Adding a new package or test
