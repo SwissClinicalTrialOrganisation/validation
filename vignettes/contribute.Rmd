@@ -1,0 +1,221 @@
+---
+title: "Contributing new tests"
+output: 
+  pdf_document: default
+  rmarkdown::html_vignette: default
+vignette: >
+  %\VignetteIndexEntry{Contributing new tests}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This package contains the tests for R packages that form the core of the R package validation by the SCTO Statistics and Methodology platform. It also includes a set of functions for working with the results of tests that have been published on the SCTO platform, in the form of issues.
+
+Where this package deviates from a normal R package is in the tests for other packages (most packages only contain tests for themselves). The tests for other packages are stored in the `inst/tests` directory, and are named according to the package they are testing (e.g. the `inst/tests/presize` directory contains tests for the `presize` package). 
+
+The most important parts of the package for adding new tests are `DESCRIPTION` and `inst/tests`. How an R package is further structured is beyond the scope of this vignette. [R Packages](https://r-pkgs.org/), by Hadley and Bryan, provides a comprehensive overview of R package structure and development. 
+
+
+## Adding a new package or test
+
+On github, fork this package to your account. 
+
+Clone your fork to your computer. 
+
+Navigate to the folder that you cloned the package to, and initiate an R session in that directory. If you use RStudio, open the validation.Rproj file. If you do not, open R and use your preferred method to set the working directory. 
+
+Ensure that you have the `devtools` package installed. If you do not, install it with `install.packages("devtools")`. You may also need to install the relevant [rtools](https://r-pkgs.org/setup.html#setup-tools) version for your system. 
+
+Load the package with `devtools::load_all()`.
+
+The `test_skeleton` function can be used to create the package skeleton for a new package. In the code below, substitute `pkg` and `fun` with the name of the package and the name of the function(s) you want to test. 
+
+```{r, eval = FALSE}
+test_skeleton("pkg", c("fun", "fun2", "etc"))
+```
+
+If they do not already exist, this will create a set of files in the `inst/test` directory. 
+
+- `info.txt` file contains the name of the package and a freetext description of what is tested, 
+- `setup-pkg.R` file contains the necessary setup code,
+- for each `fun` in the `fun` argument, a `test-function.R` file is created.
+
+In the event that the package already has tests, the `test_skeleton` function will not overwrite the existing files, adding any necessary `test-function.R` files. 
+
+Add the relevant tests to the `test-function.R` files and check that they work as expected (run `devtools::load_all()` followed by `test("package")`). 
+
+Once you have added the necessary tests (see the next section), add any new files and/or commit the changes, push them to your fork and create a pull request on github. You should also increment the package version number and add a note to the `NEWS.md` file.
+
+At this stage, the four-eye principle will be applied to check the adequacy and quality of the tests and code. If the reviewer agrees with your tests, they will be merged into the package. If they note any issues, which you will see as comments in the GitHub pull request, you will need to address them before the tests can be merged.
+
+Once merged, the tests should be run from the new version of the validation package (installed via `remotes::install_github("SwissClinicalTrialOrganisation/validation")`) to ensure that they work as expected.
+
+The tests can then be run via `validation::test("packagename")` and documented in the repository at [https://github.com/SwissClinicalTrialOrganisation/pkg_validation](https://github.com/SwissClinicalTrialOrganisation/pkg_validation).
+
+## Writing tests
+
+Testing is performed via the [testthat](https://testthat.r-lib.org/) framework. All tests for a given function should be placed in a dedicated `test-function.R` file.
+
+Each test is comprised of one or more expectations and a descriptive name. 
+
+E.g. 
+
+```{r, eval = FALSE}
+test_that("some meaningful message about the tests", {
+  expect_equal(1 + 1, 2)
+  expect_true(is.numeric(1))
+  expect_false(is.character(1))
+})
+```
+
+Where multiple tests are to be made on what could be a single object, it is often useful to create the object outside of the `test_that` function. This is particularly useful when different descriptive texts should be shown for the tests (e.g. perhaps the coefficients and standard errors from a model):
+
+```{r, eval = FALSE}
+obj <- some_function(params)
+test_that("test 1 on obj", {
+  expect_equal(obj$value_to_test, expected_value)
+})
+test_that("test 2 on obj", {
+  expect_equal(obj$another_value_to_test, expected_value)
+})
+
+```
+
+If objects are only useful to the test, they can be created within the `test_that` function.
+
+```{r, eval = FALSE}
+test_that("tests on obj", {
+  obj <- some_function(params)
+  expect_equal(obj$value_to_test, expected_value)
+  expect_equal(obj$another_value_to_test, expected_value)
+})
+
+```
+
+Making the description of the test meaningful is important, as it will help the user diagnose where the problem is.
+
+`testthat` supports a large number of expectations, which are documented in the [testthat documentation](https://testthat.r-lib.org/reference/index.html). We demonstrate a few examples below.
+
+### Compare computation to a reference value
+
+To test the computation of the function, the following code must be added to the testing file, for as many test cases as considered appropriate:
+
+```{r, eval = FALSE}
+test_that("function f works", {
+  expect_equal(f(x), y)
+})
+```
+
+Where f is the function to be tested, x are the input parameters for the function and y is the expected returned value.
+
+Note that is/may be necessary/desirable to set a tolerance for floating point comparisons. This can be done with the `tolerance` argument. 
+
+### Testing for errors, warnings and other messages
+
+To test whether, under certain conditions, the function returns an error, a warning or a message, the following corresponding code can be adapted, for as many test cases as considered appropriate:
+
+```{r, eval = FALSE}
+test_that("function f returns an error", {
+  expect_error(f(x))
+})
+
+test_that("function f returns a warning", {
+  expect_warning(f(x))
+})
+
+test_that("function f returns a message", {
+  expect_message(f(x))
+})
+```
+
+Where f is the function to be tested, x are the arguments that define the conditions. Use the `regexp` argument to check for a particular error, warning or message.
+
+```{r, eval = FALSE}
+test_that("function f returns an error", {
+  expect_error(f(x), regexp = "some error message")
+})
+```
+
+In contrast, to test whether the function runs without returning an error, a warning or a message, the following corresponding code can be adapted, for as many test cases as considered appropriate:
+
+```{r, eval = FALSE}
+test_that("function f runs without error", {
+  expect_no_error(f(x))
+})
+
+test_that("function f runs without a warning", {
+  expect_warning(f(x))
+})
+
+test_that("function f runs without a message", {
+  expect_message(f(x))
+})
+```
+
+
+### Testing booleans
+
+To test whether, under certain conditions, the function returns TRUE or FALSE, adapt the following code as appropriate:
+
+
+```{r, eval = FALSE}
+test_that("function f returns TRUE", {
+  expect_true(f(x))
+})
+
+test_that("function f returns FALSE", {
+  expect_false(f(x))
+})
+```
+
+Where f is the function to be tested, x are the arguments that define the conditions.
+
+### Testing for NULL
+
+To test whether, under certain conditions, the function returns NULL, the following code can be adapted, for as many test cases as considered appropriate:
+
+```{r, eval = FALSE}
+test_that("function f returns NULL", {
+  expect_null(f(x))
+})
+```
+
+### Testing the type of object returned (base R)
+
+To test whether, the function returns an object of a certain type, the following code can be adapted, for as many test cases as considered appropriate:
+
+```{r, eval = FALSE}
+test_that("function f returns object of type XXX", {
+  expect_type(f(x), type)
+})
+```
+
+Where f is the function to be tested, x are the arguments that define the conditions and type is any of the following: “integer”, “character”, “factor”, “logical”, “double”.
+
+### TEST CLASS (s3)
+To test whether, the function returns an object of class s3, the following code can be adapted, for as many cases as considered appropriate:
+
+```{r, eval = FALSE}
+test_that("function f returns object of class s3", {
+  expect_s3_class(f(x), class)
+})
+```
+
+Where f is the function to be tested, x are the arguments that define the conditions and class is, among others, any of the following: “data.frame”, “factor”, “Date”, “POSIXct”, etc.
+
+
+## Hints for working with GitHub
+
+RStudio has a built-in git interface, which is a good way to manage your git repositories if you use RStudio. 
+
+The [Happy Git and GitHub for the useR](https://happygitwithr.com/) book is a comprehensive guide to working with git and GitHub. Of particular use are chapters 9 to 12 on connecting your computer with GitHub.
+
+The GitHub desktop app is a good way to manage your git repositories if you are not comfortable with the command line. This is also an easy way to connect your computer with your GitHub account. There are many other GUIs for working with git repositories. See [here for a listing of some of them](https://git-scm.com/downloads/guis).
+
