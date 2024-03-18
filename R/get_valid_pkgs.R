@@ -1,4 +1,5 @@
-#' Read validated packages from some location
+#' Get the list of validated packages from GitHub
+#'
 #' This function downloads issues from github and extracts relevant information from them
 #' @param approved_only only return approved packages (logical)
 #' @export
@@ -17,27 +18,31 @@ get_valid_pkgs <- function(approved_only = TRUE){
   # jsonlite::fromJSON("validated_packages.json")
 
 
-  repo <- "aghaynes/pkg_validation"
-  issues <- gh::gh(repo = repo,
-                   endpoint = "/repos/:repo/issues",
-                   .limit = Inf,
-                   .params = list(state = "all",
-                                  "X-GitHub-Api-Version" = "2022-11-28"))
-  # comments <- gh::gh(repo = repo,
-  #                    endpoint = "/repos/:repo/issues/comments",
-  #                    .limit = Inf,
-  #                    .params = list("X-GitHub-Api-Version" = "2022-11-28"))
-  # The bodies of the messages then probably need taking apart...
-
   # issues |>
   #   purrr::map(get_labels)
 
-  pkgs <- issues[is_package(issues)]
+  pkgs <- get_pkgs()
   if(approved_only){
     pkgs <- pkgs[is_approved(pkgs)]
   }
-  out <- pkgs |> purrr::map(extract_elements_pkg) |> dplyr::bind_rows()
+  out <- issues_to_df(pkgs)
 
   return(out)
 }
 
+#' get packages from github, or filter a list of issues for packages
+#' @keywords internal
+get_pkgs <- function(issues = NULL, ...){
+  if(is.null(issues)){
+    issues <- get_issues(...)
+  }
+  pkgs <- issues[is_package(issues)]
+}
+
+#' issues are a list of items. this function converts it to a dataframe
+#' @keywords internal
+issues_to_df <- function(issues){
+  issues |>
+    purrr::map(extract_elements_pkg) |> #View()
+    dplyr::bind_rows()
+}
