@@ -1,5 +1,6 @@
 #' @keywords internal
 #' extract the useful text elements from an issue
+#' @importFrom tidyr pivot_wider
 extract_elements_test <- function(issue){
   # most information in the body of the issue
   body <- issue$body

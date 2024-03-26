@@ -19,8 +19,10 @@ Imports:
     dplyr,
     glue,
     lubridate,
+    readr,
     sessioninfo,
-    testthat
+    testthat,
+    tidyr
 RoxygenNote: 7.3.0
 Suggests: 
     rmarkdown,
