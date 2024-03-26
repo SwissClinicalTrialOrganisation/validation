@@ -1,7 +1,6 @@
 ---
 title: "Contributing new tests"
 output: 
-  pdf_document: default
   rmarkdown::html_vignette: default
 vignette: >
   %\VignetteIndexEntry{Contributing new tests}
