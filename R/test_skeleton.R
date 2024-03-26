@@ -9,11 +9,15 @@
 #' @export
 #'
 #' @examples
-test_skeleton <- function(pkg, fun){
-  directory <- file.path("inst", "tests", pkg)
+test_skeleton <- function(pkg, funs, dir = getwd()){
+  directory <- file.path(dir, pkg)
 
   if(!dir.exists(directory)){
     dir.create(directory, recursive = TRUE)
+  }
+  test_download <- get_tests(pkg, dir = directory)
+
+  if(!test_download){
 
     write(c(paste("Tests for package", pkg)),
           file = file.path(directory, "info.txt"),
@@ -27,7 +31,7 @@ test_skeleton <- function(pkg, fun){
           sep = "\n")
   }
 
-  lapply(fun, function(f){
+  lapply(funs, function(f){
     file <- file.path(directory, paste0("test-", f, ".R"))
     if(!file.exists(file)){
       write(c("# Write relevent tests for the function in here",

@@ -1,10 +1,13 @@
-#' Hook for collecting user-defined chunk risk level
+#' Hook for collecting user-defined chunk risk level in markdown documents
 #'
 #' This is a function that can be used with Rmarkdown or quarto to collect the
-#' risk associated with a particular chunk.
+#' risk associated with a particular chunk. The risk level can then be tabulated
+#' towards the end of the document to give an overview of the risk associated
+#' with the product.
 #'
-#' @param options
-#' @param before
+#' @param options chunk options
+#' @param before whether the hook is called before or after the chunk (only
+#' before does anything)
 #'
 #' @return
 #' @export

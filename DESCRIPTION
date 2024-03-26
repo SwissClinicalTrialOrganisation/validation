@@ -1,22 +1,27 @@
 Package: validation
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Tools for assisting with package validation within the SCTO package
+    validation projedct of the Statistics and Methodology platform.
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author@R: 
+    c(
+    person(given = "Alan G.", family = "Haynes", role = "cre",
+    email = "alan.haynes@unibe.ch"))
+Maintainer: Alan G Haynes <alan.haynes@unibe.ch>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Imports:
+    cranlogs,
     crayon,
     dplyr,
     glue,
+    lubridate,
     sessioninfo,
-    testthat,
-    valtools
-RoxygenNote: 7.2.3
+    testthat
+RoxygenNote: 7.3.0
 Suggests: 
     rmarkdown,
     testthat,
@@ -25,5 +30,6 @@ Suggests:
     magrittr,
     devtools
 VignetteBuilder: knitr
-URL: https://github.com/aghaynes/validation
-BugReports: https://github.com/aghaynes/validation/issues
+URL: https://github.com/SwissClinicalTrialOrganisation/validation
+BugReports: https://github.com/SwissClinicalTrialOrganisation/validation/issues
+Config/testthat/edition: 3
