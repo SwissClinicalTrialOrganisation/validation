@@ -6,8 +6,7 @@
 #' @param repo repository name
 #'
 #' @return a list of comments
-#' @export
-#'
+#' @keywords internal
 #' @examples
 get_comments <- function(issue, repo = sctoreports()){
   comments <- gh::gh(repo = repo,

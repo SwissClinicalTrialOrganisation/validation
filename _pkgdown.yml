@@ -1,0 +1,29 @@
+template:
+  bootstrap: 5
+
+reference:
+- title: Functions to assist in day-to-day work
+  description: >
+    We may need to be able to check whether a package has been validated.
+    These functions serve as tools to do that.
+  contents:
+  - check_session
+  - get_valid_pkgs
+  - risk_hook
+
+- title: Functions to assist with the initial package validation process
+  contents:
+  - get_12month_download_score
+  - get_n_deps
+
+- title: Functions to assist with testing packages and functions
+  contents:
+  - test
+  - test_skeleton
+
+- title: Functions for communicating with github
+  contents:
+  - sctoreports
+  - get_test_reports
+  - get_valid_pkgs
+

@@ -4,9 +4,10 @@
 #' @export
 #' @importFrom sessioninfo package_info
 #' @importFrom dplyr filter left_join
+#' @rdname check_session
 #' @examples
 #' check_session()
-check_session <- function(attached_only = FALSE, approved_only = TRUE){
+check_session <- function(attached_only = TRUE, approved_only = TRUE){
   session <- package_info()
 
   loaded <- session |>
@@ -49,16 +50,12 @@ check_session <- function(attached_only = FALSE, approved_only = TRUE){
 
 
 
-#' Print the results of \code{check_session}
-#'
 #' @param x output from \code{check_session}
 #' @param ... options passed to methods
-#'
+#' @rdname check_session
 #' @export
 #' @importFrom glue glue
 #' @importFrom crayon yellow red
-#'
-#' @examples
 print.sctovalidity <- function(x, ...){
 
   n_valid <- nrow(x$validated)

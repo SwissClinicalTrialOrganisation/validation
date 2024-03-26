@@ -21,28 +21,12 @@ get_valid_pkgs <- function(approved_only = TRUE){
   # issues |>
   #   purrr::map(get_labels)
 
-  pkgs <- get_pkgs()
+  pkgs <- load_pkg_table()
   if(approved_only){
-    pkgs <- pkgs[is_approved(pkgs)]
+    pkgs <- pkgs |> filter(approved)
   }
-  out <- issues_to_df(pkgs)
 
-  return(out)
+  return(pkgs)
 }
 
-#' get packages from github, or filter a list of issues for packages
-#' @keywords internal
-get_pkgs <- function(issues = NULL, ...){
-  if(is.null(issues)){
-    issues <- get_issues(...)
-  }
-  pkgs <- issues[is_package(issues)]
-}
 
-#' issues are a list of items. this function converts it to a dataframe
-#' @keywords internal
-issues_to_df <- function(issues){
-  issues |>
-    purrr::map(extract_elements_pkg) |> #View()
-    dplyr::bind_rows()
-}

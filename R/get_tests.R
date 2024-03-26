@@ -2,6 +2,7 @@
 #' @param pkg package name as a string
 #' @param repo github repository to download from
 #' @param dir directory to download to
+#' @export
 #' @keywords internal
 get_tests <- function(pkg, dir = tempdir(), repo = sctotests()){
   files <- try(gh::gh(repo = repo,
