@@ -1,6 +1,7 @@
 #' validate the inputs for a package validation report
 #' @param score the output from calculate_pkg_score for a single package
 #' @return list wit two elements: score_ok (logical) and message (character)
+#' @keywords internal
 validate_pkg_issue <- function(score){
   if(is.na(score$final_score)){
     prefixes <- c("The package author", "The package maintainer", "The package purpose",
