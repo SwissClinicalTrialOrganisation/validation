@@ -7,13 +7,14 @@
 #' @param tab a string containing the markdown table
 #'
 #' @return a data frame
+#' @importFrom utils read.delim
 #' @export
 #'
 #' @examples
-#' tab <- c("|file      |context |test                                 | nb| passed|skipped |error | warning|",
-#' "|:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|",
-#' "|test-lm.R |lm      |lm returns the expected coefficients |  8|      4|FALSE   |FALSE |       4|",
-#' "|test-lm.R |lm      |Standard errors from lm are correct  |  3|      3|FALSE   |FALSE |       0|")
+#' tab <- c("|file      |context |test      | nb| passed|skipped |error | warning|",
+#'          "|:---------|:-------|:---------|--:|------:|:-------|:-----|-------:|",
+#'          "|test-lm.R |lm      |message 1 |  8|      4|FALSE   |FALSE |       4|",
+#'          "|test-lm.R |lm      |message 2 |  3|      3|FALSE   |FALSE |       0|")
 #' parse_evidence_tab(tab)
 parse_evidence_tab <- function(tab){
   con <- textConnection(tab)
@@ -21,9 +22,9 @@ parse_evidence_tab <- function(tab){
   close(con)
   lines <- lines[!grepl('^[\\:\\s\\+\\-\\=\\_\\|]*$', lines, perl = TRUE)]
   lines <- gsub('(^\\s*?\\|)|(\\|\\s*?$)', '', lines)
-  utils::read.delim(text = paste(lines, collapse = '\n'),
-                    sep = "|",
-                    stringsAsFactors = FALSE,
-                    strip.white = TRUE)
+  read.delim(text = paste(lines, collapse = '\n'),
+             sep = "|",
+             stringsAsFactors = FALSE,
+             strip.white = TRUE)
 }
 

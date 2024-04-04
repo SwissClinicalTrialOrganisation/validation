@@ -6,9 +6,14 @@
 #'
 #' @return
 #' @export
+#' @importFrom dplyr bind_rows group_by slice_tail
 #'
 #' @examples
 update_pkg_table <- function(...){
+
+  release_date <- n_dependencies <- nr_downloads_12_months <- issue_num <-
+    final_score <- package <- NULL
+
   existing <- load_pkg_table()
   new <- gen_pkg_table(...)
 

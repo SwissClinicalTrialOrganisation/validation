@@ -1,24 +1,28 @@
 Package: validation
 Type: Package
 Title: Tools for assisting with package validation within the SCTO package
-    validation projedct of the Statistics and Methodology platform.
+    validation projedct of the Statistics and Methodology platform
 Version: 0.2.0
 Authors@R: 
     c(
     person(given = "Alan G.", family = "Haynes", role = "cre",
     email = "alan.haynes@unibe.ch"))
 Maintainer: Alan G Haynes <alan.haynes@unibe.ch>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Description: The validation platform consists of three GitHub repositories, one
+    of which hosts this package. The others host tests for specific packages, and a 
+    location to reports the results of tests and validations. 
+    This package provides tools to work with that data.
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Imports:
     cranlogs,
     crayon,
     dplyr,
+    gh,
     glue,
     lubridate,
+    purrr,
     readr,
     sessioninfo,
     stringr,

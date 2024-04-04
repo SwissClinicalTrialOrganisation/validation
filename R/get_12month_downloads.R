@@ -1,6 +1,6 @@
 #' Get number of downloads in the last 12 months
 #'
-#' Note: this is only available for CRAN packages
+#' Note: this is only available for CRAN or bioconductor packages
 #'
 #' @param package package name
 #' @param from start date
@@ -8,10 +8,12 @@
 #' @return integer number of downloads
 #' @importFrom cranlogs cran_downloads
 #' @importFrom lubridate ymd
+#' @importFrom utils read.table
+#' @export
 #'
 #' @examples
-#' get_12month_download("ggplot2")
-#' get_12month_download("secuTrialR")
+#' get_12month_downloads("ggplot2")
+#' get_12month_downloads("secuTrialR")
 #'
 get_12month_downloads <- function(package,
                                   from = Sys.Date() - 365,
@@ -21,7 +23,7 @@ get_12month_downloads <- function(package,
   if(!is.character(package)) stop("Package must be a character string")
 
   # CRAN downloads
-  downloads <- cranlogs::cran_downloads(package, from = from, to = to)
+  downloads <- cran_downloads(package, from = from, to = to)
   n <- sum(downloads$count)
 
   if(n == 0){
@@ -36,7 +38,7 @@ get_12month_downloads <- function(package,
     bc <- bc[bc$Package == package,]
     if(nrow(bc) > 0) {
       bc <- bc[bc$Month != "all",]
-      bc$date <- lubridate::ymd(paste0(bc$Year, "-", bc$Month, "-01"))
+      bc$date <- ymd(paste0(bc$Year, "-", bc$Month, "-01"))
       bc <- bc[bc$date > from & bc$date < to,]
       n_bc <- sum(bc$Nb_of_downloads)
     } else {

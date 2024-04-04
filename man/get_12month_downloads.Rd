@@ -17,10 +17,10 @@ get_12month_downloads(package, from = Sys.Date() - 365, to = Sys.Date())
 integer number of downloads
 }
 \description{
-Note: this is only available for CRAN packages
+Note: this is only available for CRAN or bioconductor packages
 }
 \examples{
-get_12month_download("ggplot2")
-get_12month_download("secuTrialR")
+get_12month_downloads("ggplot2")
+get_12month_downloads("secuTrialR")
 
 }

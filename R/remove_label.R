@@ -7,10 +7,10 @@
 #'
 remove_label <- function(issue, label, repo = sctoreports()){
 
-  gh::gh(repo = repo,
-         issue = issue,
-         endpoint = "DELETE /repos/:repo/issues/:issue/labels/:label",
-         .send_headers = list("X-GitHub-Api-Version" = "2022-11-28"),
-         label = label)
+  gh(repo = repo,
+     issue = issue,
+     endpoint = "DELETE /repos/:repo/issues/:issue/labels/:label",
+     .send_headers = list("X-GitHub-Api-Version" = "2022-11-28"),
+     label = label)
 }
 

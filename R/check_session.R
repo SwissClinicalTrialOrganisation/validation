@@ -6,9 +6,13 @@
 #' @importFrom dplyr filter left_join
 #' @rdname check_session
 #' @examples
+#' \dontrun{
 #' check_session()
+#' }
 check_session <- function(attached_only = TRUE, approved_only = TRUE){
   session <- package_info()
+
+  attached <- package <- loadedversion <- NULL
 
   loaded <- session |>
     # filter(attached) |>

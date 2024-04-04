@@ -30,6 +30,8 @@ values mapped to the new domain, typically a vector or single value.
 Map a domain from one range to another
 }
 \examples{
+\dontrun{
 domain_mapper(0.5, 0, 1, 0, 100)
+}
 }
 \keyword{internal}

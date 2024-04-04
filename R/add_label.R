@@ -7,9 +7,9 @@
 #'
 add_label <- function(issue, label, repo = sctoreports()){
 
-  gh::gh(repo = repo,
-         issue = issue,
-         endpoint = "POST /repos/:repo/issues/:issue/labels",
-         .send_headers = list("X-GitHub-Api-Version" = "2022-11-28"),
-         labels = list(label))
+  gh(repo = repo,
+     issue = issue,
+     endpoint = "POST /repos/:repo/issues/:issue/labels",
+     .send_headers = list("X-GitHub-Api-Version" = "2022-11-28"),
+     labels = list(label))
 }

@@ -10,7 +10,9 @@
 #' @keywords internal
 #'
 #' @examples
+#' \dontrun{
 #' domain_mapper(0.5, 0, 1, 0, 100)
+#' }
 domain_mapper <- function(value,
                           min_original = 0,
                           max_original = 1,

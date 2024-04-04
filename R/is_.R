@@ -16,8 +16,10 @@
 #' \code{get_labels} gets all labels associated with an issue.
 #'
 #'
-#' @param issue a list of issues
+#' @param issue a specific issue
+#' @param issues a list of issues
 #' @param what the label to check for
+#' @importFrom purrr map map_lgl
 #'
 #' @export
 #' @examples
@@ -26,10 +28,10 @@
 #'
 #' # issue <- get_issue(21)
 #' # is_package(list(issue))
-is_ <- function(issue, what){
-  issue |>
-    purrr::map(get_labels) |>
-    purrr::map_lgl(~ what %in% .x)
+is_ <- function(issues, what){
+  issues |>
+    map(get_labels) |>
+    map_lgl(~ what %in% .x)
 }
 
 #' convenience function to check for a package label

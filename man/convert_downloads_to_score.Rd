@@ -3,7 +3,7 @@
 \name{convert_downloads_to_score}
 \alias{convert_downloads_to_score}
 \title{Convert number of downloads to a score
-The score is based on the approach by the riskmetric package. It is a
+The score is based on the approach by the riskmetric package. It is based on a
 simplification of the logistic curve.}
 \usage{
 convert_downloads_to_score(downloads)
@@ -12,9 +12,9 @@ convert_downloads_to_score(downloads)
 \item{downloads}{number of downloads}
 }
 \description{
-See \code{?metric_score.pkg_metric_downloads_1yr} for further details.
+See \href{https://pharmar.github.io/riskmetric/reference/metric_score.pkg_metric_downloads_1yr.html}{riskmetric documentation} for further details.
 }
 \seealso{
-\code{\link{metric_score.pkg_metric_downloads_1yr }}
+\href{https://pharmar.github.io/riskmetric/reference/metric_score.pkg_metric_downloads_1yr.html}{riskmetric documentation}
 }
 \keyword{internal}

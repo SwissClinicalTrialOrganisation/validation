@@ -4,15 +4,18 @@
 #' @importFrom dplyr summarize mutate select rename
 #' @importFrom stringr str_replace_all str_split str_extract str_remove str_replace
 extract_elements_test <- function(issue){
+
+  new <- info_n <- NULL
+
   # most information in the body of the issue
   body <- issue$body
-  body <- stringr::str_replace_all(body, "\\r\\n", "CARRIAGERETURN")
-  body <- stringr::str_replace_all(body, "\\n\\n", "CARRIAGERETURN")
-  body <- stringr::str_split(body, "CARRIAGERETURN") |> unlist()
+  body <- str_replace_all(body, "\\r\\n", "CARRIAGERETURN")
+  body <- str_replace_all(body, "\\n\\n", "CARRIAGERETURN")
+  body <- str_split(body, "CARRIAGERETURN") |> unlist()
   body <- body[body != ""]
   elements <- data.frame(body = body) |>
-    mutate(new = stringr::str_detect(body, "^##"),
-                  info_n = cumsum(new)) |>
+    mutate(new = str_detect(body, "^##"),
+           info_n = cumsum(new)) |>
     # concatenate multiple lines
     summarize(.by = c(new, info_n),
                      body = paste(body, collapse = "\n")) |>

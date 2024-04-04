@@ -9,7 +9,7 @@
 \alias{get_labels}
 \title{Check whether an issue has a particular label}
 \usage{
-is_(issue, what)
+is_(issues, what)
 
 is_package(issues)
 
@@ -22,9 +22,11 @@ is_triage(issues)
 get_labels(issue)
 }
 \arguments{
-\item{issue}{a list of issues}
+\item{issues}{a list of issues}
 
 \item{what}{the label to check for}
+
+\item{issue}{a specific issue}
 }
 \description{
 These functions provide a way to check whether an issue has a particular label.

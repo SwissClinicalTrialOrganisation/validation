@@ -8,6 +8,8 @@ gen_pkg_table(pkgs = NULL, ...)
 }
 \arguments{
 \item{pkgs}{NULL or a list of issues from \code{get_issues}}
+
+\item{...}{options passed to \code{get_issues}}
 }
 \description{
 This is intended for use by a github action to generate a table for the website

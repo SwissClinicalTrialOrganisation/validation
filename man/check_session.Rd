@@ -22,5 +22,7 @@ check_session(attached_only = TRUE, approved_only = TRUE)
 Check a sessions loaded packages against the validated packages list
 }
 \examples{
+\dontrun{
 check_session()
+}
 }

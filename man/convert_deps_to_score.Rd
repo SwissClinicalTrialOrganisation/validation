@@ -3,7 +3,8 @@
 \name{convert_deps_to_score}
 \alias{convert_deps_to_score}
 \title{Convert number of dependencies to a score
-The score is based on the approach by the riskmetric package. It is based on a logistic curve.}
+The score is based on the approach by the riskmetric package. It is based on
+a logistic curve.}
 \usage{
 convert_deps_to_score(deps)
 }
@@ -11,9 +12,9 @@ convert_deps_to_score(deps)
 \item{downloads}{number of downloads}
 }
 \description{
-See \code{?metric_score.pkg_metric_downloads_1yr} for further details.
+See \href{https://pharmar.github.io/riskmetric/reference/metric_score.pkg_metric_dependencies.html}{riskmetric documentation} for further details.
 }
 \seealso{
-\code{\link{metric_score.pkg_metric_dependencies }}
+\href{https://pharmar.github.io/riskmetric/reference/metric_score.pkg_metric_dependencies.html}{riskmetric documentation}
 }
 \keyword{internal}

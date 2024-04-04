@@ -10,17 +10,22 @@
 #' @param download whether to download a fresh set of tests
 #' @param cleanup whether to delete testing folder
 #' @param dir directory to download tests to. This should have \code{pkg} at the end. If not present, it will be created.
+#' @param repo storing the tests
 #'
 #' @return Object of class \code{validate_result}
 #' @export
+#' @importFrom utils sessionInfo
 #'
 #' @examples
-#' test("presize")
+#' if(FALSE) test("stats")
 test <- function(pkg,
                  download = TRUE,
                  cleanup = FALSE,
                  dir = getwd(),
                  repo = sctotests()){
+
+  package <- NULL
+
 
   if(!grepl(paste0(pkg, "$"), dir)) dir <- file.path(dir, pkg)
   if(!dir.exists(dir)) dir.create(dir, recursive = TRUE)
@@ -39,11 +44,7 @@ test <- function(pkg,
     subset(package == pkg)
   pkgversion <- pkgdat$loadedversion
 
-  user <- if(require(gh)){
-    gh::gh_whoami()$login
-  } else {
-    sessionInfo() |> str()
-  }
+  user <- gh::gh_whoami()$login
   now <- Sys.time()
   info <- readLines(file.path(dir, "info.txt"))
 
@@ -73,8 +74,9 @@ test <- function(pkg,
 }
 
 #' @export
+#' @param ... additional arguments (not used)
 #' @importFrom crayon blue bold
-print.validate_result <- function(x){
+print.validate_result <- function(x, ...){
   cat(blue$bold("## Copy and paste the following output into the indicated sections of a new issue\n\n"))
   cat(blue$bold("ISSUE NAME: \n"))
   cat(paste0("[Package test]: ", x$pkg, " version ", x$pkg_version, " \n\n"))

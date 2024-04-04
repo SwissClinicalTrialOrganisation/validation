@@ -14,6 +14,8 @@ test(pkg, download = TRUE, cleanup = FALSE, dir = getwd(), repo = sctotests())
 \item{cleanup}{whether to delete testing folder}
 
 \item{dir}{directory to download tests to. This should have \code{pkg} at the end. If not present, it will be created.}
+
+\item{repo}{storing the tests}
 }
 \value{
 Object of class \code{validate_result}
@@ -27,5 +29,5 @@ repository by presenting the information in a format that can be copied and
 pasted in the issue template.
 }
 \examples{
-test("presize")
+if(FALSE) test("stats")
 }

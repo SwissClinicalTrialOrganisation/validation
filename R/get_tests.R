@@ -2,12 +2,13 @@
 #' @param pkg package name as a string
 #' @param repo github repository to download from
 #' @param dir directory to download to
+#' @importFrom utils download.file
 #' @export
 #' @keywords internal
 get_tests <- function(pkg, dir = tempdir(), repo = sctotests()){
-  files <- try(gh::gh(repo = repo,
-                      endpoint = paste0("GET /repos/:repo/contents/tests/", pkg),
-                      .params = list("X-GitHub-Api-Version" = "2022-11-28")),
+  files <- try(gh(repo = repo,
+                  endpoint = paste0("GET /repos/:repo/contents/tests/", pkg),
+                  .params = list("X-GitHub-Api-Version" = "2022-11-28")),
                silent = TRUE)
   if(all(class(files) == "try-error")){
     print(paste("No tests found for package ", pkg))

@@ -7,6 +7,12 @@ calculate_pkg_score <- function(pkgs = NULL){
 
   if(is.null(pkgs)) pkgs <- get_pkgs()
 
+  score <- n_dependencies <- nr_downloads_12_months <- purpose_score <-
+    author_score <- maintainer_score <- n_dependencies_score <- on_cran_score <-
+    source_code_documented_score <- nr_downloads_12_months_score <-
+    bug_reporting_active_score <- has_vignettes_score <- has_tests_score <-
+    final_score <- NULL
+
   pkg_df <- pkgs |>
     issues_to_df(extract_elements_pkg)
 

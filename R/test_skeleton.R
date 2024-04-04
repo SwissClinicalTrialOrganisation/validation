@@ -3,7 +3,8 @@
 #' This function will create the directory if it does not exist, and add a `info.txt` file with the package name, and a `setup-pkg.R` file with the necessary setup code.
 #'
 #' @param pkg package to be tested
-#' @param fun function to be tested
+#' @param funs functions to be tested
+#' @param dir where to save the tests/skeleton
 #'
 #' @return a set of files in your working directory, which can be edited and
 #'   uploaded to github

@@ -1,2 +1,0 @@
-Demo tests for presize
-- expected confidence interval width from prec_mean

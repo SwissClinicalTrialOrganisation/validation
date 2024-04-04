@@ -9,7 +9,9 @@ test_skeleton(pkg, funs, dir = getwd())
 \arguments{
 \item{pkg}{package to be tested}
 
-\item{fun}{function to be tested}
+\item{funs}{functions to be tested}
+
+\item{dir}{where to save the tests/skeleton}
 }
 \value{
 a set of files in your working directory, which can be edited and

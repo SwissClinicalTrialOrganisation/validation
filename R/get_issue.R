@@ -35,13 +35,14 @@
 #' @param issue the issue number
 #' @param repo the repository to get the issue from
 #' @export
+#' @importFrom gh gh
 #' @examples
 #' # get_issue(21)
 get_issue <- function(issue, repo = sctoreports()){
-  issue <- gh::gh(repo = repo,
-                  endpoint = paste0("/repos/:repo/issues/", issue),
-                  .limit = Inf,
-                  .params = list(state = "all",
-                                 "X-GitHub-Api-Version" = "2022-11-28"))
+  issue <- gh(repo = repo,
+              endpoint = paste0("/repos/:repo/issues/", issue),
+              .limit = Inf,
+              .params = list(state = "all",
+                             "X-GitHub-Api-Version" = "2022-11-28"))
   return(issue)
 }

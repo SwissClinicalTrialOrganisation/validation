@@ -4,6 +4,8 @@
 #' @param approved_only only return approved packages (logical)
 #' @export
 #' @returns dataframe including package, version, etc.
+#' @importFrom dplyr bind_rows
+#' @importFrom stringr str_detect
 #' @examples
 #' # only approved packages
 #' get_valid_pkgs()
@@ -21,10 +23,11 @@ get_valid_pkgs <- function(approved_only = TRUE){
   # issues |>
   #   purrr::map(get_labels)
 
-  pkgs <- load_pkg_table()
+  pkgs <- get_pkgs()
   if(approved_only){
-    pkgs <- pkgs |> filter(approved)
+    pkgs <- pkgspkgs <- pkgs[is_approved(pkgs)]
   }
+  out <- issues_to_df(pkgs)
 
   return(pkgs)
 }
