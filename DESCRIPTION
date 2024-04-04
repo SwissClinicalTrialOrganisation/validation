@@ -21,12 +21,12 @@ Imports:
     lubridate,
     readr,
     sessioninfo,
+    stringr,
     testthat,
     tidyr
 RoxygenNote: 7.3.0
 Suggests: 
     rmarkdown,
-    testthat,
     knitr,
     kableExtra,
     magrittr,
