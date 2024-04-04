@@ -80,32 +80,1287 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># only approved packages</span></span></span>
 <span class="r-in"><span><span class="fu">get_valid_pkgs</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Rows: </span><span style="color: #0000BB;">0</span> <span style="font-weight: bold;">Columns: </span><span style="color: #0000BB;">20</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="font-weight: bold;">Column specification</span> <span style="color: #00BBBB;">────────────────────────────────────────────────────────</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Delimiter:</span> ","</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">chr</span> (20): name, scto_rel, package, version, release_date, author, maintainer...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Use `spec()` to retrieve the full column specification for this data.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in filter(pkgs, approved):</span> <span style="color: #00BBBB;">ℹ</span> In argument: `approved`.</span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error:</span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> object 'approved' not found</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$repository_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16/labels{/name}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$comments_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16/comments"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16/events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/16"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2205161540</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "I_kwDOKHVskc6DcBhE"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$number</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$title</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "[Package validation]: lme4 version 1.1-35.1"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$login</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6594028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MDQ6VXNlcjY1OTQwMjg="</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$avatar_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://avatars.githubusercontent.com/u/6594028?v=4"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$gravatar_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$followers_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/followers"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$following_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/following{/other_user}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$gists_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/gists{/gist_id}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$starred_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/starred{/owner}{/repo}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$subscriptions_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/subscriptions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$organizations_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/orgs"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$repos_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/repos"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/events{/privacy}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$received_events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/received_events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "User"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$site_admin</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847585136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIsRcA"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "b60205"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847585907</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIsUcw"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/approved"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "approved"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "F4E375"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$state</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "open"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$locked</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$assignee</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$assignees</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$milestone</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$comments</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$created_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-03-25T08:21:05Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$updated_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-03-26T07:22:15Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$closed_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$author_association</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MEMBER"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$active_lock_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$body</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "### Name\r\n\r\nMC\r\n\r\n### What is your relationship with the SCTO?\r\n\r\nSCTO Stats and Methodology platform\r\n\r\n### Name of the package you have validated\r\n\r\nlme4\r\n\r\n### Version number of the package evaluated\r\n\r\n1.1-35.1\r\n\r\n### Date of release of the evaluated version of the package\r\n\r\n2023-11-05\r\n\r\n### The package author has...\r\n\r\nwell-known or known credentials\r\n\r\n### Is there a maintainer listed for the package and are their contact details available?\r\n\r\nAvailable\r\n\r\n### Package purpose\r\n\r\nStatistical; published\r\n\r\n### Number of dependencies\r\n\r\n11\r\n\r\n### Is the package on available from CRAN or bioconductor?\r\n\r\nYes\r\n\r\n### Is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented.\r\n\r\nYes\r\n\r\n### Number of downloads in the last 12 months\r\n\r\n5184335\r\n\r\n### Bug reporting address is available (in DESCRIPTION)\r\n\r\nYes\r\n\r\n### Does the package have one or more vignettes?\r\n\r\nYes\r\n\r\n### Does the package have unit and/or function tests performed by the authors? Are they comprehensive? Are they well documented?\r\n\r\nYes, comprehensive"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16/reactions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$total_count</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$`+1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$`-1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$laugh</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$hooray</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$confused</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$heart</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$rocket</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$eyes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$timeline_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16/timeline"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$performed_via_github_app</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$state_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="co"># all packages, regardless of status</span></span></span>
 <span class="r-in"><span><span class="fu">get_valid_pkgs</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Rows: </span><span style="color: #0000BB;">0</span> <span style="font-weight: bold;">Columns: </span><span style="color: #0000BB;">20</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="font-weight: bold;">Column specification</span> <span style="color: #00BBBB;">────────────────────────────────────────────────────────</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Delimiter:</span> ","</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">chr</span> (20): name, scto_rel, package, version, release_date, author, maintainer...</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Use `spec()` to retrieve the full column specification for this data.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 20</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 20 variables: name &lt;chr&gt;, scto_rel &lt;chr&gt;, package &lt;chr&gt;, version &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   release_date &lt;chr&gt;, author &lt;chr&gt;, maintainer &lt;chr&gt;, purpose &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   n_dependencies &lt;chr&gt;, on_cran &lt;chr&gt;, source_code_documented &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nr_downloads_12_months &lt;chr&gt;, bug_reporting_active &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   has_vignettes &lt;chr&gt;, has_tests &lt;chr&gt;, issue_url &lt;chr&gt;, issue_num &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   user &lt;chr&gt;, final_score &lt;chr&gt;, final_score_cat &lt;chr&gt;</span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>NAs introduced by coercion</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/20"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$repository_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/20/labels{/name}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$comments_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/20/comments"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/20/events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/20"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2207648616</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "I_kwDOKHVskc6Dlgto"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$number</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$title</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "[Package validation]: dplyr version 1.1.4"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$login</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6594028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MDQ6VXNlcjY1OTQwMjg="</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$avatar_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://avatars.githubusercontent.com/u/6594028?v=4"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$gravatar_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$followers_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/followers"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$following_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/following{/other_user}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$gists_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/gists{/gist_id}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$starred_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/starred{/owner}{/repo}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$subscriptions_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/subscriptions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$organizations_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/orgs"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$repos_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/repos"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/events{/privacy}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$received_events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/received_events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "User"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$user$site_admin</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847578368</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIr3AA"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/triage"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "triage"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "61255E"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[1]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847585136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIsRcA"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "b60205"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$labels[[2]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$state</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "open"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$locked</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$assignee</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$assignees</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$milestone</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$comments</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$created_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-03-26T09:07:34Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$updated_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-04-04T08:25:23Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$closed_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$author_association</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MEMBER"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$active_lock_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$body</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "### Name\r\n\r\nAlan Haynes\r\n\r\n### What is your relationship with the SCTO?\r\n\r\nSCTO Stats and Methodology platform\r\n\r\n### Name of the package you have validated\r\n\r\ndplyr\r\n\r\n### Version number of the package evaluated\r\n\r\n1.1.4\r\n\r\n### Date of release of the evaluated version of the package\r\n\r\n2023-11-17\r\n\r\n### The package author has...\r\n\r\nwell-known or known credentials\r\n\r\n### Is there a maintainer listed for the package and are their contact details available?\r\n\r\nAvailable\r\n\r\n### Package purpose\r\n\r\nNon-statistical\r\n\r\n### Number of dependencies\r\n\r\n13\r\n\r\n### Is the package on available from CRAN or bioconductor?\r\n\r\nYes\r\n\r\n### Is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented.\r\n\r\nYes\r\n\r\n### Number of downloads in the last 12 months\r\n\r\n18987564\r\n\r\n### Bug reporting address is available (in DESCRIPTION)\r\n\r\nYes\r\n\r\n### Does the package have one or more vignettes?\r\n\r\nYes\r\n\r\n### Does the package have unit and/or function tests performed by the authors? Are they comprehensive? Are they well documented?\r\n\r\nYes, comprehensive"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/20/reactions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$total_count</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$`+1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$`-1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$laugh</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$hooray</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$confused</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$heart</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$rocket</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$reactions$eyes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$timeline_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/20/timeline"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$performed_via_github_app</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$state_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/19"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$repository_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/19/labels{/name}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$comments_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/19/comments"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/19/events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/19"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2205912385</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "I_kwDOKHVskc6De41B"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$number</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$title</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "[Package validation]: TEST version 1"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$login</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6594028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MDQ6VXNlcjY1OTQwMjg="</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$avatar_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://avatars.githubusercontent.com/u/6594028?v=4"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$gravatar_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$followers_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/followers"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$following_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/following{/other_user}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$gists_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/gists{/gist_id}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$starred_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/starred{/owner}{/repo}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$subscriptions_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/subscriptions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$organizations_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/orgs"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$repos_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/repos"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/events{/privacy}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$received_events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/received_events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "User"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$user$site_admin</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[1]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847374414</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[1]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIfaTg"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[1]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/invalid"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[1]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "invalid"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[1]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "e4e669"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[1]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[1]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "This doesn't seem right"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[2]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847585136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[2]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIsRcA"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[2]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[2]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[2]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "b60205"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[2]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$labels[[2]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$state</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "open"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$locked</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$assignee</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$assignees</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$milestone</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$comments</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$created_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-03-25T14:36:00Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$updated_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-04-03T13:07:17Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$closed_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$author_association</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MEMBER"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$active_lock_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$body</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "### Name\r\n\r\nAH \r\n\r\n### What is your relationship with the SCTO?\r\n\r\nSCTO Stats and Methodology platform\r\n\r\n### Name of the package you have validated\r\n\r\nTEST\r\n\r\n### Version number of the package evaluated\r\n\r\n1\r\n\r\n### Date of release of the evaluated version of the package\r\n\r\n_No response_\r\n\r\n### The package author has...\r\n\r\ncredential\r\n\r\n### Is there a maintainer listed for the package and are their contact details available?\r\n\r\nAvailabl\r\n\r\n### Package purpose\r\n\r\nStatistical; publishe\r\n\r\n### Number of dependencies\r\n\r\n1\r\n\r\n### Is the package on available from CRAN or bioconductor?\r\n\r\nYe\r\n\r\n### Is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented.\r\n\r\nYe\r\n\r\n### Number of downloads in the last 12 months\r\n\r\n_No response_\r\n\r\n### Bug reporting address is available (in DESCRIPTION)\r\n\r\nYe\r\n\r\n### Does the package have one or more vignettes?\r\n\r\nYe\r\n\r\n### Does the package have unit and/or function tests performed by the authors? Are they comprehensive? Are they well documented?\r\n\r\nYes, comprehensiv"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$reactions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$reactions$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/19/reactions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$reactions$total_count</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$reactions$`+1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$reactions$`-1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$reactions$laugh</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$reactions$hooray</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$reactions$confused</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$reactions$heart</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$reactions$rocket</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$reactions$eyes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$timeline_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/19/timeline"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$performed_via_github_app</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$state_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/18"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$repository_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/18/labels{/name}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$comments_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/18/comments"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/18/events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/18"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2205169587</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "I_kwDOKHVskc6DcDez"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$number</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$title</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "[Package validation]: tables version 0.9.17"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$login</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6594028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MDQ6VXNlcjY1OTQwMjg="</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$avatar_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://avatars.githubusercontent.com/u/6594028?v=4"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$gravatar_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$followers_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/followers"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$following_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/following{/other_user}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$gists_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/gists{/gist_id}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$starred_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/starred{/owner}{/repo}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$subscriptions_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/subscriptions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$organizations_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/orgs"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$repos_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/repos"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/events{/privacy}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$received_events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/received_events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "User"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$user$site_admin</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[1]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847578368</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[1]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIr3AA"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[1]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/triage"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[1]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "triage"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[1]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "61255E"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[1]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[1]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[2]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847585136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[2]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIsRcA"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[2]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[2]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[2]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "b60205"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[2]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$labels[[2]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$state</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "open"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$locked</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$assignee</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$assignees</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$milestone</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$comments</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$created_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-03-25T08:26:06Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$updated_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-03-26T07:20:55Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$closed_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$author_association</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MEMBER"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$active_lock_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$body</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "### Name\r\n\r\nMC\r\n\r\n### What is your relationship with the SCTO?\r\n\r\nSCTO Stats and Methodology platform\r\n\r\n### Name of the package you have validated\r\n\r\ntables\r\n\r\n### Version number of the package evaluated\r\n\r\n0.9.17\r\n\r\n### Date of release of the evaluated version of the package\r\n\r\n2023-05-02\r\n\r\n### The package author has...\r\n\r\ncredentials\r\n\r\n### Is there a maintainer listed for the package and are their contact details available?\r\n\r\nAvailable\r\n\r\n### Package purpose\r\n\r\nStatistical; published\r\n\r\n### Number of dependencies\r\n\r\n4\r\n\r\n### Is the package on available from CRAN or bioconductor?\r\n\r\nYes\r\n\r\n### Is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented.\r\n\r\nYes\r\n\r\n### Number of downloads in the last 12 months\r\n\r\n148591\r\n\r\n### Bug reporting address is available (in DESCRIPTION)\r\n\r\nYes\r\n\r\n### Does the package have one or more vignettes?\r\n\r\nYes\r\n\r\n### Does the package have unit and/or function tests performed by the authors? Are they comprehensive? Are they well documented?\r\n\r\nNo"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$reactions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$reactions$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/18/reactions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$reactions$total_count</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$reactions$`+1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$reactions$`-1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$reactions$laugh</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$reactions$hooray</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$reactions$confused</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$reactions$heart</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$reactions$rocket</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$reactions$eyes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$timeline_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/18/timeline"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$performed_via_github_app</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$state_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/17"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$repository_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/17/labels{/name}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$comments_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/17/comments"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/17/events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/17"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2205165800</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "I_kwDOKHVskc6DcCjo"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$number</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$title</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "[Package validation]: presize version 0.3.7"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$login</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6594028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MDQ6VXNlcjY1OTQwMjg="</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$avatar_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://avatars.githubusercontent.com/u/6594028?v=4"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$gravatar_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$followers_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/followers"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$following_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/following{/other_user}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$gists_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/gists{/gist_id}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$starred_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/starred{/owner}{/repo}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$subscriptions_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/subscriptions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$organizations_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/orgs"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$repos_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/repos"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/events{/privacy}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$received_events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/received_events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "User"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$user$site_admin</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[1]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847578368</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[1]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIr3AA"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[1]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/triage"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[1]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "triage"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[1]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "61255E"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[1]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[1]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[2]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847585136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[2]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIsRcA"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[2]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[2]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[2]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "b60205"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[2]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$labels[[2]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$state</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "open"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$locked</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$assignee</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$assignees</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$milestone</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$comments</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$created_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-03-25T08:23:41Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$updated_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-03-25T10:37:59Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$closed_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$author_association</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MEMBER"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$active_lock_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$body</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "### Name\r\n\r\nMC\r\n\r\n### What is your relationship with the SCTO?\r\n\r\nSCTO Stats and Methodology platform\r\n\r\n### Name of the package you have validated\r\n\r\npresize\r\n\r\n### Version number of the package evaluated\r\n\r\n0.3.7\r\n\r\n### Date of release of the evaluated version of the package\r\n\r\n2023-02-27\r\n\r\n### The package author has...\r\n\r\ncredentials\r\n\r\n### Is there a maintainer listed for the package and are their contact details available?\r\n\r\nAvailable\r\n\r\n### Package purpose\r\n\r\nStatistical; published\r\n\r\n### Number of dependencies\r\n\r\n2\r\n\r\n### Is the package on available from CRAN or bioconductor?\r\n\r\nYes\r\n\r\n### Is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented.\r\n\r\nYes\r\n\r\n### Number of downloads in the last 12 months\r\n\r\n5768\r\n\r\n### Bug reporting address is available (in DESCRIPTION)\r\n\r\nYes\r\n\r\n### Does the package have one or more vignettes?\r\n\r\nYes\r\n\r\n### Does the package have unit and/or function tests performed by the authors? Are they comprehensive? Are they well documented?\r\n\r\nYes, comprehensive"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$reactions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$reactions$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/17/reactions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$reactions$total_count</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$reactions$`+1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$reactions$`-1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$reactions$laugh</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$reactions$hooray</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$reactions$confused</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$reactions$heart</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$reactions$rocket</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$reactions$eyes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$timeline_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/17/timeline"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$performed_via_github_app</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$state_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$repository_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16/labels{/name}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$comments_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16/comments"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16/events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/SwissClinicalTrialOrganisation/pkg_validation/issues/16"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2205161540</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "I_kwDOKHVskc6DcBhE"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$number</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$title</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "[Package validation]: lme4 version 1.1-35.1"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$login</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6594028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MDQ6VXNlcjY1OTQwMjg="</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$avatar_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://avatars.githubusercontent.com/u/6594028?v=4"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$gravatar_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$html_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://github.com/aghaynes"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$followers_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/followers"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$following_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/following{/other_user}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$gists_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/gists{/gist_id}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$starred_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/starred{/owner}{/repo}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$subscriptions_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/subscriptions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$organizations_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/orgs"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$repos_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/repos"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/events{/privacy}"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$received_events_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/users/aghaynes/received_events"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$type</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "User"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$user$site_admin</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[1]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847585136</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[1]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIsRcA"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[1]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[1]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "package"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[1]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "b60205"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[1]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[1]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[2]]$id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5847585907</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[2]]$node_id</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "LA_kwDOKHVskc8AAAABXIsUcw"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[2]]$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/labels/approved"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[2]]$name</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "approved"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[2]]$color</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "F4E375"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[2]]$default</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$labels[[2]]$description</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ""</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$state</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "open"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$locked</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$assignee</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$assignees</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$milestone</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$comments</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$created_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-03-25T08:21:05Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$updated_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2024-03-26T07:22:15Z"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$closed_at</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$author_association</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "MEMBER"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$active_lock_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$body</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "### Name\r\n\r\nMC\r\n\r\n### What is your relationship with the SCTO?\r\n\r\nSCTO Stats and Methodology platform\r\n\r\n### Name of the package you have validated\r\n\r\nlme4\r\n\r\n### Version number of the package evaluated\r\n\r\n1.1-35.1\r\n\r\n### Date of release of the evaluated version of the package\r\n\r\n2023-11-05\r\n\r\n### The package author has...\r\n\r\nwell-known or known credentials\r\n\r\n### Is there a maintainer listed for the package and are their contact details available?\r\n\r\nAvailable\r\n\r\n### Package purpose\r\n\r\nStatistical; published\r\n\r\n### Number of dependencies\r\n\r\n11\r\n\r\n### Is the package on available from CRAN or bioconductor?\r\n\r\nYes\r\n\r\n### Is source code available, accessible and documented (i.e., well-structured and including comments) or is the source code unavailable or not clearly commented.\r\n\r\nYes\r\n\r\n### Number of downloads in the last 12 months\r\n\r\n5184335\r\n\r\n### Bug reporting address is available (in DESCRIPTION)\r\n\r\nYes\r\n\r\n### Does the package have one or more vignettes?\r\n\r\nYes\r\n\r\n### Does the package have unit and/or function tests performed by the authors? Are they comprehensive? Are they well documented?\r\n\r\nYes, comprehensive"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$reactions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$reactions$url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16/reactions"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$reactions$total_count</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$reactions$`+1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$reactions$`-1`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$reactions$laugh</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$reactions$hooray</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$reactions$confused</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$reactions$heart</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$reactions$rocket</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$reactions$eyes</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$timeline_url</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://api.github.com/repos/SwissClinicalTrialOrganisation/pkg_validation/issues/16/timeline"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$performed_via_github_app</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$state_reason</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
   </div>

@@ -82,17 +82,14 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"|file      |context |test                                 | nb| passed|skipped |error | warning|"</span>,</span></span>
-<span class="r-in"><span><span class="st">"|:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|"</span>,</span></span>
-<span class="r-in"><span><span class="st">"|test-lm.R |lm      |lm returns the expected coefficients |  8|      4|FALSE   |FALSE |       4|"</span>,</span></span>
-<span class="r-in"><span><span class="st">"|test-lm.R |lm      |Standard errors from lm are correct  |  3|      3|FALSE   |FALSE |       0|"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">tab</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"|file      |context |test      | nb| passed|skipped |error | warning|"</span>,</span></span>
+<span class="r-in"><span>         <span class="st">"|:---------|:-------|:---------|--:|------:|:-------|:-----|-------:|"</span>,</span></span>
+<span class="r-in"><span>         <span class="st">"|test-lm.R |lm      |message 1 |  8|      4|FALSE   |FALSE |       4|"</span>,</span></span>
+<span class="r-in"><span>         <span class="st">"|test-lm.R |lm      |message 2 |  3|      3|FALSE   |FALSE |       0|"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu">parse_evidence_tab</span><span class="op">(</span><span class="va">tab</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        file context                                 test nb passed skipped</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 test-lm.R      lm lm returns the expected coefficients  8      4   FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 test-lm.R      lm  Standard errors from lm are correct  3      3   FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   error warning</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 FALSE       4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 FALSE       0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        file context      test nb passed skipped error warning</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 test-lm.R      lm message 1  8      4   FALSE FALSE       4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 test-lm.R      lm message 2  3      3   FALSE FALSE       0</span>
 </code></pre></div>
     </div>
   </div>
