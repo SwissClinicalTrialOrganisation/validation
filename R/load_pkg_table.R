@@ -5,5 +5,5 @@
 #' @importFrom readr read_csv
 #' @export
 load_pkg_table <- function(){
-  read_csv("https://raw.githubusercontent.com/SwissClinicalTrialOrganisation/pkg_validation/main/res/validated_packages.csv")
+  read_csv("https://raw.githubusercontent.com/SwissClinicalTrialOrganisation/pkg_validation/main/tables/validated_packages.csv")
 }

@@ -1,7 +1,6 @@
-#' validate the inputs for a package validation report
-#' @param score the output from calculate_pkg_score for a single package
-#' @return list wit two elements: score_ok (logical) and message (character)
-#' @keywords internal
+#' @param issue a single function test issue
+#' @return list wit two elements: ok (logical) and message (character)
+#' @rdname validate_pkg_issue
 validate_test_issue <- function(issue){
   message <- NULL
   if(is.na(issue$package)){

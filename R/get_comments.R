@@ -1,13 +1,8 @@
-#' Get comments for a particular issue
-#'
-#' Download any comments to a particular issue in a particular repository.
-#'
 #' @param issue issue number
 #' @param repo repository name
 #'
 #' @return a list of comments
-#' @keywords internal
-#' @examples
+#' @rdname get_issue
 get_comments <- function(issue, repo = sctoreports()){
   comments <- gh::gh(repo = repo,
                      issue = issue,
