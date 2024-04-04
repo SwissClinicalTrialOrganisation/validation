@@ -80,10 +80,32 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># only approved packages</span></span></span>
 <span class="r-in"><span><span class="fu">get_valid_pkgs</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in open.connection(structure(5L, class = c("curl", "connection"), conn_id = &lt;pointer: 0x66c&gt;),     "rb"):</span> HTTP error 404.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Rows: </span><span style="color: #0000BB;">0</span> <span style="font-weight: bold;">Columns: </span><span style="color: #0000BB;">20</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="font-weight: bold;">Column specification</span> <span style="color: #00BBBB;">────────────────────────────────────────────────────────</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Delimiter:</span> ","</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">chr</span> (20): name, scto_rel, package, version, release_date, author, maintainer...</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Use `spec()` to retrieve the full column specification for this data.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in filter(pkgs, approved):</span> <span style="color: #00BBBB;">ℹ</span> In argument: `approved`.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error:</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> object 'approved' not found</span>
 <span class="r-in"><span><span class="co"># all packages, regardless of status</span></span></span>
 <span class="r-in"><span><span class="fu">get_valid_pkgs</span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in open.connection(structure(6L, class = c("curl", "connection"), conn_id = &lt;pointer: 0x66e&gt;),     "rb"):</span> HTTP error 404.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Rows: </span><span style="color: #0000BB;">0</span> <span style="font-weight: bold;">Columns: </span><span style="color: #0000BB;">20</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">──</span> <span style="font-weight: bold;">Column specification</span> <span style="color: #00BBBB;">────────────────────────────────────────────────────────</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Delimiter:</span> ","</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">chr</span> (20): name, scto_rel, package, version, release_date, author, maintainer...</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Use `spec()` to retrieve the full column specification for this data.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Specify the column types or set `show_col_types = FALSE` to quiet this message.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 20</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 20 variables: name &lt;chr&gt;, scto_rel &lt;chr&gt;, package &lt;chr&gt;, version &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   release_date &lt;chr&gt;, author &lt;chr&gt;, maintainer &lt;chr&gt;, purpose &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   n_dependencies &lt;chr&gt;, on_cran &lt;chr&gt;, source_code_documented &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   nr_downloads_12_months &lt;chr&gt;, bug_reporting_active &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   has_vignettes &lt;chr&gt;, has_tests &lt;chr&gt;, issue_url &lt;chr&gt;, issue_num &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   user &lt;chr&gt;, final_score &lt;chr&gt;, final_score_cat &lt;chr&gt;</span></span>
 </code></pre></div>
     </div>
   </div>
