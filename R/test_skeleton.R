@@ -5,7 +5,8 @@
 #' @param pkg package to be tested
 #' @param fun function to be tested
 #'
-#' @return
+#' @return a set of files in your working directory, which can be edited and
+#'   uploaded to github
 #' @export
 #'
 #' @examples

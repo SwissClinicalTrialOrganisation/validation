@@ -1,7 +1,23 @@
-#' validate the inputs for a package validation report
+#' Validate the inputs for package or function tests
+#'
+#' @description
+#' These functions validate the inputs from package or function tests.
+#'
+#' Both functions return a list with two elements - an indicator of whether the
+#' validation passed without any errors and a character indicating what the error(s)
+#' was/were. The character string is formated as if it were a comment to a GitHub
+#' issue.
+#'
+#' The functions are not intended to be used directly by the user, but are called
+#' by a github action with the results posted as a comment to github.
+#'
+#' `validate_pkg_issue` checks the values from a package issue.
+#'
+#' `validate_test_issue` checks the values from a function test issue.
+#'
 #' @param score the output from calculate_pkg_score for a single package
 #' @return list wit two elements: score_ok (logical) and message (character)
-#' @keywords internal
+#' @export
 validate_pkg_issue <- function(score){
   if(is.na(score$final_score)){
     prefixes <- c("The package author", "The package maintainer", "The package purpose",

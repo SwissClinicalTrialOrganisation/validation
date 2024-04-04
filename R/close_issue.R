@@ -1,15 +1,7 @@
-#' Close an issue
-#'
-#' This function allows close on an issue.
-#'
-#' It's mainly to enable the automated closing of issues from github
-#' actions.
-#'
 #' @param issue issue number
 #' @param repo repository name
 #'
-#' @return
-#' @keywords internal
+#' @rdname get_issue
 #'
 #' @examples
 #' # post_comment(issue = 1, comment = "This is a test comment")

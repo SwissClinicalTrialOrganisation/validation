@@ -6,7 +6,7 @@
 #' @param min_range minimum of the desired domain
 #' @param max_range maximum of the desired domain
 #'
-#' @return
+#' @return values mapped to the new domain, typically a vector or single value.
 #' @keywords internal
 #'
 #' @examples
