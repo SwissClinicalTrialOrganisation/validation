@@ -24,7 +24,8 @@ test_skeleton <- function(pkg, funs, dir = getwd()){
     write(c(paste("Tests for package", pkg)),
           file = file.path(directory, "info.txt"),
           sep = "\n")
-    write(c(paste0("library(", pkg, ")"),
+    write(c(paste0("if(!require('", pkg, "')) install.packages('", pkg, "')"),
+            paste0("library(", pkg, ")"),
             "library(testthat)",
             "withr::defer({",
             paste0("  detach(package:", pkg, ")"),

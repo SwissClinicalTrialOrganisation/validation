@@ -2,11 +2,11 @@
 % Please edit documentation in R/extract_elements_pkg.R
 \name{extract_elements_pkg}
 \alias{extract_elements_pkg}
-\title{extract the useful text elements from an issue}
+\title{extract the useful elements from an issue about a package}
 \usage{
 extract_elements_pkg(issue)
 }
 \description{
-extract the useful text elements from an issue
+extract the useful elements from an issue about a package
 }
 \keyword{internal}

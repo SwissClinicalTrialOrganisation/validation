@@ -1,4 +1,4 @@
-#' extract the useful text elements from an issue
+#' extract the useful elements from an issue about a package
 #' @keywords internal
 #' @importFrom tidyr pivot_wider
 #' @importFrom dplyr summarize mutate select rename
@@ -48,6 +48,7 @@ extract_elements_pkg <- function(issue){
       question == "### Number of dependencies" ~ "n_dependencies",
 
       question == "### Is the package on available from CRAN or bioconductor?" ~ "on_cran",
+      question == "### Is the package available from CRAN or bioconductor?" ~ "on_cran",
 
       grepl("### Is source code available, accessible and documented", question) ~ "source_code_documented",
 
@@ -67,15 +68,20 @@ extract_elements_pkg <- function(issue){
   out$n_dependencies <- as.numeric(trimws(out$n_dependencies))
   out$nr_downloads_12_months <- as.numeric(trimws(out$nr_downloads_12_months))
   if(out$release_date != "_No response_"){
-    out$release_date <- as.Date(trimws(out$release_date))
+    out$release_date <- trimws(out$release_date)
   } else {
-    out$release_date <- NA
+    out$release_date <- ""
   }
   out$issue_url <- url
   out$issue_num <- issue$number
   out$user <- issue$user$login
   out$approved <- is_approved(list(issue))
   out$state <- issue$state
+  out$create_date <- issue$created_at |> substr(1, 10)
+  out$update_date <- issue$updated_at |> substr(1, 10)
+  out$close_date <- ifelse(!is.null(issue$closed_at),
+                            issue$closed_at|> substr(1, 10),
+                            "")
   # add some tags?
 
   return(out)

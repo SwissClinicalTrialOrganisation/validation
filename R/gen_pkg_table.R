@@ -11,7 +11,7 @@ gen_pkg_table <- function(pkgs = NULL, ...){
   package <- author_score <- nr_downloads_12_months_score <- NULL
 
   if(is.null(pkgs)){
-    pkgs <- get_pkgs(...)
+    pkgs <- get_pkgs()
   }
   pkgs |>
     calculate_pkg_score() |>

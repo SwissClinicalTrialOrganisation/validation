@@ -19,12 +19,12 @@ This package contains a set of functions for to assist in the running and report
 
 Tests are written using functions from the [testthat](https://testthat.r-lib.org/) package, and can be downloaded, run, and reported using the functions in this package.
 
-## Packages that currently have no tests
+## `test_skeleton` helps build the structure
 
-The `test_skeleton` function can be used to create the relevant folder structure for testing a new package. In the code below, substitute `pkg` with the name of the package to be tested and add the names of the function(s) you want to test in the `fun` argument. 
+The `test_skeleton` function can be used to create the relevant folder structure for testing a new package, or adding a file for testing additional functions. In the code below, substitute `pkg` with the name of the package to be tested and add the names of the function(s) you want to test in the `funs` argument. 
 
 ```{r, eval = FALSE}
-test_skeleton("pkg", fun = c("fun", "fun2", "etc"))
+test_skeleton("pkg", funs = c("fun", "fun2", "etc"))
 ```
 
 This will create a set of files in your working directory:
@@ -39,16 +39,18 @@ This will create a set of files in your working directory:
 ```
 
 - `info.txt` file will contain the name of the package and a freetext description of what is tested, 
-- `setup-pkg.R` is for any necessary setup code,
-- for each `fun` in the `fun` argument, a `test-function.R` file is created, which will contain the actual testing code.
+- `setup-pkg.R` is for any necessary setup code (e.g. installation of the package),
+- for each function in the `funs` argument, a `test-function.R` file is created, which will contain the actual testing code.
 
-In the event that the package already has tests, the `test_skeleton` function will not overwrite the existing files, adding any necessary `test-function.R` files. 
+In the event that the package already has tests, the `test_skeleton` function will not overwrite the existing files, only adding any necessary `test-function.R` files. 
 
 Add the relevant tests to the `test-function.R` files and check that they work as expected (run `devtools::load_all()` followed by `test("package")`). 
 
+## Submitting tests to the platform
+
 Once you have added the necessary tests (see the next section), add the files to the [validation_tests repository](https://github.com/SwissClinicalTrialOrganisation/validation_tests). The easiest way is to navigate to the tests folder, click on "Add file" and then "Upload files". Now you can simply drag the `pkg` folder into the browser window and commit the change. This will have forked the repository to your own GitHub account, and you can now create a pull request to the original repository to incorporate your code. It is also possible to fork the repository, clone it to your computer and make the commit there, but this is not strictly necessary.
 
-At this stage, the four-eye principle will be applied to check the adequacy and quality of the tests and code. If the reviewer agrees with your tests, they will be merged into the package. If they note any issues, which you will see as comments in the GitHub pull request, you will need to address them before the tests can be merged.
+At this stage, the four-eye principle will be applied to the pull request to check the adequacy and quality of the tests and code. If the reviewer agrees with your tests, they will be merged into the package. If they note any issues, which you will see as comments in the GitHub pull request, you will need to address them before the tests can be merged.
 
 Once merged, the tests can be run via the validation package `validation::test("packagename")` and documented in the repository at [https://github.com/SwissClinicalTrialOrganisation/pkg_validation](https://github.com/SwissClinicalTrialOrganisation/pkg_validation).
 
@@ -202,6 +204,30 @@ test_that("function f returns object of class s3", {
 ```
 
 Where f is the function to be tested, x are the arguments that define the conditions and class is, among others, any of the following: “data.frame”, “factor”, “Date”, “POSIXct”, etc.
+
+### Running tests under certain conditions
+
+On occasion, it may be desirable to restrict the tests to specific package versions. This can be done by using the `skip_if` functions in `testthat`. 
+
+For example, the pivot functions we introduced to tidyr in version 1.0.0. If we have tests on those functions, we can restrict them to versions 1.0.0 and above with the following code:
+
+```
+skip_if(packageVersion("tidyr") < "1.0.0")
+```
+
+This line can be placed at the top of the test file, before any tests are run. The equivalent can be done for versions below a certain version, which might be useful for deprecated functions.
+
+It might be suitable to stop tests from being run if the internet is not available:
+
+```
+skip_if_offline()
+```
+
+Or if a package can only be run on a specific operating system:
+
+```
+skip_on_os("mac")
+```
 
 
 ## Worked example
@@ -443,6 +469,26 @@ Tests for package stats
 - coefficients and SEs from a unvariate model with continuous and factor predictors. SEs were checked against Stata.
 ```
 
+Where tests are for/from a specific version of the package, as might be the case for newly added or deprecated functions, this should also be noted.
+
+### `setup-stats.R`
+
+This file should contain the code necessary to load the package and any other packages that are required for the tests. In this case, we need the `stats` package and the `testthat` package.
+
+The testthat package is always needed. In general, loading the package is necessary. As `stats` is a standard R package, it's no necessary in this case. 
+
+We also try to leave the environment as we found it, so we detach the packages via the `withr::defer` function. Again, in this case, we don't want to detach it, as it is a standard package.
+
+```
+if(!require(stats)) install.packages("stats")
+library(stats)
+library(testthat)
+withr::defer({
+  # most of the time, we would want to detach packages, in this case we don't
+  # detach(package:stats)
+}, teardown_env())
+```
+
 ### Testing that the tests work
 
 Assuming the tests are in a folder called `stats`, which is within out current working directory, we can run the tests with:
@@ -451,7 +497,7 @@ Assuming the tests are in a folder called `stats`, which is within out current w
 validation::test("stats", download = FALSE)
 ```
 
-We specify download = FALSE because validation will by default download the files from GitHub and run those tests.
+We specify `download = FALSE` because `validation::test` will download the files from GitHub and run those tests by default. `download = FALSE` tells it to use the local copy of the files instead.
 
 The output should return various information on our tests and system. The first part comes from testthat itself while it runs the tests, the remainder (after "Copy and paste the following...") provides summary information that should be copied into a github issue :
 
@@ -484,6 +530,12 @@ Tests for package stats
 PASS 
 
 ### Test output:
+
+
+|file      |context |test                                 | nb| passed|skipped |error | warning|
+|:---------|:-------|:------------------------------------|--:|------:|:-------|:-----|-------:|
+|test-lm.R |lm      |lm returns the expected coefficients |  8|      4|FALSE   |FALSE |       4|
+|test-lm.R |lm      |Standard errors from lm are correct  |  3|      3|FALSE   |FALSE |       0|
 
 ### SessionInfo:
 R version 4.3.1 (2023-06-16 ucrt)

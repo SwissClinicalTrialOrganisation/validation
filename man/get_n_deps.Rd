@@ -4,13 +4,15 @@
 \alias{get_n_deps}
 \title{Get the number of dependencies for a package}
 \usage{
-get_n_deps(package, ...)
+get_n_deps(package, fields = c("Depends", "Imports"), ...)
 }
 \arguments{
 \item{package}{package name}
 
-\item{...}{additional arguments passed to
-\code{\link[tools]{package_dependencies}}. See details for more information.}
+\item{fields}{list of fields to check for dependencies.
+Defaults to \code{c("Depends", "Imports")}}
+
+\item{...}{additional arguments passed to \code{packageDescription}.}
 }
 \value{
 integer: the number of dependencies
@@ -23,7 +25,7 @@ The \code{recursive} and \code{reverse} arguments are perhaps of most interest.
 \code{recursive} details the number of dependencies of the package, including
 those that are dependencies of dependencies. \code{reverse} details the number
 of packages that depend on the package, which may be an indicator of a high
-quality package. This function uses the \code{\link[tools]{package_dependencies}}
+quality package. This function uses the
 function from the tools package.
 }
 \examples{
@@ -33,4 +35,9 @@ get_n_deps("validation")
 get_n_deps("dplyr", reverse = TRUE)
 }
 
+}
+\seealso{
+\code{\link[utils]{packageDescription}}
+
+For CRAN packages, \code{\link[tools]{package_dependencies}} may be of interest.
 }

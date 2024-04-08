@@ -21,7 +21,7 @@ check_session <- function(attached_only = TRUE, approved_only = TRUE){
   if(attached_only)
     loaded <- loaded |> filter(attached)
 
-  validated <- get_valid_pkgs(approved_only)
+  validated <- load_pkg_table()
 
 
   loaded |> filter(package %in% validated$package)

@@ -6,7 +6,7 @@
 #'
 #' @return
 #' @export
-#' @importFrom dplyr bind_rows group_by slice_tail
+#' @importFrom dplyr bind_rows group_by slice_tail ends_with
 #'
 #' @examples
 update_pkg_table <- function(...){
@@ -15,10 +15,11 @@ update_pkg_table <- function(...){
     final_score <- package <- NULL
 
   existing <- load_pkg_table()
-  new <- gen_pkg_table(...)
+  new <- gen_pkg_table(...) |>
+    mutate(across(ends_with("date"), as.Date))
 
   existing |>
-    mutate(release_date = as.Date(release_date),
+    mutate(across(ends_with("date"), as.Date),
            n_dependencies = as.numeric(n_dependencies),
            nr_downloads_12_months = as.numeric(nr_downloads_12_months),
            issue_num = as.numeric(issue_num),

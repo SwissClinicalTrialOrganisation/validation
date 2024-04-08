@@ -54,6 +54,11 @@ extract_elements_test <- function(issue){
     str_remove("   Matrix")
   out$approved <- is_approved(list(issue))
   out$state <- issue$state
+  out$create_date <- issue$created_at |> substr(1, 10)
+  out$update_date <- issue$updated_at |> substr(1, 10)
+  out$close_date <- ifelse(!is.null(issue$closed_at),
+                           issue$closed_at|> substr(1, 10),
+                           "")
 
   return(out)
 }

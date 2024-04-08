@@ -2,6 +2,7 @@
 #' @param label label to remove
 #' @param repo repository name
 #' @rdname get_issue
+#' @export
 #' @examples
 #' # remove_label(issue = 1, label = "test")
 #'

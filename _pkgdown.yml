@@ -1,0 +1,47 @@
+template:
+  bootstrap: 5
+
+reference:
+- title: Functions for everyday use
+  contents:
+  - check_session
+  - load_pkg_table
+  - risk_hook
+
+- subtitle: Functions to aid in package validation
+  contents:
+  - get_12month_downloads
+  - get_n_deps
+  - get_release_date
+
+- subtitle: Functions to aid in testing packages
+  contents:
+  - test
+  - test_skeleton
+
+- title: Functions primarily for use in GitHub actions
+  desc: >
+    Many functions are only intended to be used in GitHub actions rather than for
+    normal users.
+
+- subtitle: Links to GitHub repositories
+  desc: These are accessory functions containing the names of the repositories
+  contents:
+  - sctopkg
+  - sctoreports
+  - sctotests
+
+- subtitle: Functions that interface directly with GitHub
+  contents:
+  - gen_pkg_table
+  - get_issue
+  - get_tests
+
+- subtitle: Functions to work with issue data
+  contents:
+  - calculate_pkg_score
+  - get_valid_pkgs
+  - is_
+  - parse_evidence_tab
+  - update_pkg_table
+  - validate_pkg_issue

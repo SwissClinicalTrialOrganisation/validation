@@ -36,32 +36,38 @@ is_ <- function(issues, what){
 
 #' convenience function to check for a package label
 #' @rdname is_
+#' @export
 is_package <- function(issues){
   issues |> is_("package")
 }
 
 #' convenience function to check for a test label
 #' @rdname is_
+#' @export
 is_test <- function(issues){
   issues |> is_("test")
 }
 
 #' convenience function to check for an approved label
 #' @rdname is_
+#' @export
 is_approved <- function(issues){
-  issues |> is_("approved")
+  issues |> is_(":sparkles: approved :sparkles:")
 }
 
 #' convenience function to check for a triage label
 #' @rdname is_
+#' @export
 is_triage <- function(issues){
-  issues |> is_("triage")
+  issues |> is_(":alarm_clock: triage :alarm_clock:")
 }
 
 #' get all labels associated with an issue
 #' @rdname is_
+#' @export
 get_labels <- function(issue){
   issue$labels |>
     purrr::map(~ .x$name) |>
     unlist()
 }
+
