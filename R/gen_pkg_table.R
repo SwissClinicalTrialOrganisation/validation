@@ -1,6 +1,6 @@
-#' Generate a table with the package validation statistics
+#' Convert issues from to tables
 #'
-#' This is intended for use by a github action to generate a table for the website
+#' These functions are intended for use by a github action to generate a table for the website
 #'
 #' @param pkgs NULL or a list of issues from \code{get_issues}
 #' @param ... options passed to \code{get_issues}

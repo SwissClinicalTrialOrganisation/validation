@@ -1,6 +1,6 @@
-#' Append new package data to existing package table
+#' Append new issue data to existing tables
 #'
-#' Where a package version is already in the table, the new data will replace the old data.
+#' Where an issue is already in the table, the new data will replace the old data.
 #'
 #' @param ... options passed to gen_pkg_table e.g. a list of issues from get_pkgs
 #'
@@ -26,7 +26,7 @@ update_pkg_table <- function(...){
            final_score = as.numeric(final_score),
            ) |>
     bind_rows(new) |>
-    group_by(package, version) |>
+    group_by(package, version, issue_num) |>
     slice_tail(n = 1)
 
 }
