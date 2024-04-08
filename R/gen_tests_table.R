@@ -13,6 +13,7 @@ gen_tests_table <- function(tests = NULL, ...){
     tests <- get_test_reports()
   }
   tests |>
+    issues_to_df(extract_elements_test) |>
     return()
 
 }
