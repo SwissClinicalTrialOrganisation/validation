@@ -3,7 +3,7 @@
 \name{gen_pkg_table}
 \alias{gen_pkg_table}
 \alias{gen_tests_table}
-\title{Generate a table with the package validation statistics}
+\title{Convert issues from to tables}
 \usage{
 gen_pkg_table(pkgs = NULL, ...)
 
@@ -13,9 +13,11 @@ gen_tests_table(tests = NULL, ...)
 \item{pkgs}{NULL or a list of issues from \code{get_issues}}
 
 \item{...}{options passed to \code{get_issues}}
+
+\item{tests}{NULL or a list of issues from \code{get_issues}}
 }
 \description{
-This is intended for use by a github action to generate a table for the website
+These functions are intended for use by a github action to generate a table for the website
 
 This is intended for use by a github action to generate a table for the website
 }

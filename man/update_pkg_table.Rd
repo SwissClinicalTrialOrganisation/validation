@@ -3,7 +3,7 @@
 \name{update_pkg_table}
 \alias{update_pkg_table}
 \alias{update_tests_table}
-\title{Append new package data to existing package table}
+\title{Append new issue data to existing tables}
 \usage{
 update_pkg_table(...)
 
@@ -13,7 +13,7 @@ update_tests_table(...)
 \item{...}{options passed to gen_pkg_table e.g. a list of issues from get_pkgs}
 }
 \description{
-Where a package version is already in the table, the new data will replace the old data.
+Where an issue is already in the table, the new data will replace the old data.
 
 Where a package version is already in the table, the new data will replace the old data.
 }
