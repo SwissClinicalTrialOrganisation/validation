@@ -13,8 +13,7 @@ gen_tests_table <- function(tests = NULL, ...){
     tests <- get_test_reports()
   }
   tests |>
-    # remove test cases
-    filter(package != "TEST")
+    return()
 
 }
 
