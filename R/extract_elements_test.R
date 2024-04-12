@@ -29,6 +29,8 @@ extract_elements_test <- function(issue){
       question == "### Name" ~ "name",
       question == "### Name of the package you have tested" ~ "package",
       question == "### What version of the package have you tested?" ~ "version",
+      question == "### Where was the package installed from?" ~ "package_source",
+      grepl("^### If the package was installed from GitHub or similar", question) ~ "package_sha",
       question == "### When was this package tested?" ~ "test_date",
       question == "### What was tested?" ~ "tests",
       question == "### Test results" ~ "test_result",

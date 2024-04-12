@@ -11,7 +11,7 @@ get_tests <- function(pkg, dir = tempdir(), repo = sctotests()){
                   .params = list("X-GitHub-Api-Version" = "2022-11-28")),
                silent = TRUE)
   if(all(class(files) == "try-error")){
-    print(paste("No tests found for package ", pkg))
+    cat(paste("No tests found for package", pkg, "\n"))
     return(FALSE)
   } else {
     files <- lapply(files, function(x) x$download_url)

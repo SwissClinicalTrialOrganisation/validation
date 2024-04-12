@@ -40,6 +40,8 @@ test <- function(pkg,
     stop_on_failure = FALSE
   ) |> as.data.frame()
 
+  pkg_info <- get_pkg_source(pkg)
+
   pkgdat <- sessioninfo::package_info(pkg, include_base = TRUE) |>
     subset(package == pkg)
   pkgversion <- pkgdat$loadedversion
@@ -49,6 +51,7 @@ test <- function(pkg,
   info <- readLines(file.path(dir, "info.txt"))
 
   overall_result <- all(testres$failed == 0)
+  warnings <- any(testres$warning > 0)
 
   sysinfo <- sessionInfo()
   # OS <- glue::glue("{sysinfo[['sysname']]} {sysinfo[['release']]} ({sysinfo[['version']]})")
@@ -57,10 +60,13 @@ test <- function(pkg,
   out <- list(who = user,
               pkg = pkg,
               pkg_version = pkgversion,
+              pkg_source = pkg_info$pkg_source,
+              pkg_sha = pkg_info$sha,
               when = now,
               what = info,
               # details = pkg_reference(pkg),
               result = overall_result,
+              warnings = warnings,
               evidence = testres,
               session = sysinfo,
               repo = ifelse(download, repo, "please enter manually"),
@@ -87,6 +93,12 @@ print.validate_result <- function(x, ...){
   cat(blue$bold("### What version of the package have you validated? \n"))
   cat(x$pkg_version, "\n\n" )
 
+  cat(blue$bold("### Where was the package from? \n"))
+  cat(x$pkg_source, "\n\n" )
+
+  cat(blue$bold("### Package repository version reference\n"))
+  cat(x$pkg_sha, "\n\n" )
+
   cat(blue$bold("### When was this package tested? \n"))
   cat(format(Sys.Date(), format = "%Y-%m-%d"), "\n\n")
 
@@ -103,6 +115,14 @@ print.validate_result <- function(x, ...){
                                   "skipped", "error", "warning")],
                      format = "pipe", row.names = FALSE))
 
+  if(!x$result){
+    cat("\n\nTHE FOLLOWING ERRORS AND/OR WARNINGS WERE GENERATED:\n")
+    print(x$evidence$result[x$evidence$failed > 0 | x$evidence$warning > 0])
+  }
+  if(x$warnings & x$result){
+    cat("\n\nTHE FOLLOWING WARNINGS WERE GENERATED:\n")
+    print(x$evidence$result[x$evidence$warning > 0])
+  }
 
   cat(blue$bold("\n### SessionInfo:\n"))
   print(x$session)

@@ -50,6 +50,8 @@ extract_elements_pkg <- function(issue){
       question == "### Is the package on available from CRAN or bioconductor?" ~ "on_cran",
       question == "### Is the package available from CRAN or bioconductor?" ~ "on_cran",
 
+      question == "### If not CRAN or bioconductor, where is the package available?" ~ "not_cran_source",
+
       grepl("### Is source code available, accessible and documented", question) ~ "source_code_documented",
 
       question == "### Number of downloads in the last 12 months" ~ "nr_downloads_12_months",

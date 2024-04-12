@@ -26,7 +26,7 @@ update_pkg_table <- function(...){
            final_score = as.numeric(final_score),
            ) |>
     bind_rows(new) |>
-    group_by(package, version, issue_num) |>
+    group_by(package, desc(version), issue_num) |>
     slice_tail(n = 1)
 
 }

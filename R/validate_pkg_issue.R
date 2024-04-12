@@ -42,6 +42,13 @@ validate_pkg_issue <- function(score){
       message <- c(message, "The number of dependencies seems to be invalid. Please provide a number.")
     }
 
+    if(is.na(score$not_cran_source) & score$on_cran == "No"){
+      message <- c(
+        message,
+        "The source of the package is not CRAN or Bioconductor, but the source is missing. Please provide one."
+        )
+    }
+
     message <- message[sapply(message, function(x) !is.null(x))]
 
     if(length(message) == 0){
