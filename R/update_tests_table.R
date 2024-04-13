@@ -4,11 +4,9 @@
 #'
 #' @param ... options passed to gen_pkg_table e.g. a list of issues from get_pkgs
 #'
-#' @return
 #' @export
 #' @importFrom dplyr bind_rows group_by slice_tail ends_with
 #' @describeIn update_pkg_table Append new test data to existing tests table
-#' @examples
 update_tests_table <- function(...){
 
   package <- version <- issue_num <- approved <- NULL

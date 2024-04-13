@@ -6,6 +6,9 @@
 \usage{
 issues_to_df(issues, fun = extract_elements_pkg)
 }
+\arguments{
+\item{fun}{function to apply to each issue (extract_elements_pkg or extract_elements_test)}
+}
 \description{
 issues are a list of items. this function converts it to a dataframe
 }

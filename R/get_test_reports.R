@@ -5,7 +5,6 @@
 #'
 #' @return dataframe
 #' @rdname get_issue
-#' @examples
 get_test_reports <- function(repo = sctoreports(),
                              approved_only = FALSE){
   issues <- get_issues(repo)

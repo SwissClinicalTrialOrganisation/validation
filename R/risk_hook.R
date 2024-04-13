@@ -9,7 +9,6 @@
 #' @param before whether the hook is called before or after the chunk (only
 #' before does anything)
 #'
-#' @return
 #' @export
 #'
 #' @examples

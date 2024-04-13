@@ -15,7 +15,7 @@
 #' @param ... parameters passed to other methods
 #'
 #' @importFrom sessioninfo package_info
-#' @importFrom stringr stringr word str_remove
+#' @importFrom stringr word str_remove
 #' @importFrom jsonlite read_json
 get_pkg_source <- function(pkg, ...){
 

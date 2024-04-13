@@ -11,6 +11,7 @@
 #' @export
 #'
 #' @examples
+#' # test_skeleton(pkg = "dplyr", funs = c("select", "filter"))
 test_skeleton <- function(pkg, funs, dir = getwd()){
   directory <- file.path(dir, pkg)
 

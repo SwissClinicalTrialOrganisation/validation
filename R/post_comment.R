@@ -2,7 +2,6 @@
 #' @param comment the comment to be made
 #' @param repo repository name
 #'
-#' @return
 #' @rdname get_issue
 #' @importFrom gh gh
 #'

@@ -20,3 +20,6 @@ a set of files in your working directory, which can be edited and
 \description{
 This function will create the directory if it does not exist, and add a `info.txt` file with the package name, and a `setup-pkg.R` file with the necessary setup code.
 }
+\examples{
+# test_skeleton(pkg = "dplyr", funs = c("select", "filter"))
+}

@@ -22,3 +22,6 @@ Where a package version is already in the table, the new data will replace the o
 \item \code{update_tests_table()}: Append new test data to existing tests table
 
 }}
+\examples{
+# update_pkg_table()
+}
