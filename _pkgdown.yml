@@ -13,6 +13,7 @@ reference:
   - get_12month_downloads
   - get_n_deps
   - get_release_date
+  - get_pkg_source
 
 - subtitle: Functions to aid in testing packages
   contents:
