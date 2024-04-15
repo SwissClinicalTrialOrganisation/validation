@@ -20,6 +20,14 @@ parse_evidence_tab <- function(tab){
   con <- textConnection(tab)
   lines <- readLines(con)
   close(con)
+  # THE FOLLOWING ERRORS AND/OR WARNINGS WERE GENERATED:
+  error_messages <- paste(
+    "(THE FOLLOWING ERRORS AND/OR WARNINGS WERE GENERATED:",
+    "THE FOLLOWING WARNINGS WERE GENERATED:)", sep = "|")
+  error_line <- grep(error_messages, lines)
+  if(length(error_line) > 0){
+    lines <- lines[1:(error_line - 1)]
+  }
   lines <- lines[!grepl('^[\\:\\s\\+\\-\\=\\_\\|]*$', lines, perl = TRUE)]
   lines <- gsub('(^\\s*?\\|)|(\\|\\s*?$)', '', lines)
   read.delim(text = paste(lines, collapse = '\n'),

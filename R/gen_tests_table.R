@@ -10,10 +10,11 @@
 gen_tests_table <- function(tests = NULL, ...){
 
   if(is.null(tests)){
-    tests <- get_test_reports()
+    out <- get_test_reports(...)
+  } else {
+    out <- tests |>
+      issues_to_df(extract_elements_test)
   }
-  out <- tests |>
-    issues_to_df(extract_elements_test)
 
   return(out)
 

@@ -14,7 +14,7 @@ update_tests_table <- function(...){
   existing <- load_tests_table() |>
     mutate(issue_num = as.integer(issue_num),
            approved = as.logical(approved))
-  new <- gen_tests_table(...) |>
+  new <- gen_tests_table() |>
     mutate(across(ends_with("date"), as.Date))
 
   existing |>
