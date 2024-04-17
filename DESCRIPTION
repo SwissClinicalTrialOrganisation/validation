@@ -2,7 +2,7 @@ Package: validation
 Type: Package
 Title: Tools for assisting with package validation within the SCTO package
     validation projedct of the Statistics and Methodology platform
-Version: 0.3.3
+Version: 0.3.4
 Authors@R: 
     c(
     person(given = "Alan G.", family = "Haynes", role = "cre",

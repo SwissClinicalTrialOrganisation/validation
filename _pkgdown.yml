@@ -46,3 +46,8 @@ reference:
   - parse_evidence_tab
   - update_pkg_table
   - validate_pkg_issue
+
+- subtitle: Functions related to running tests
+  contents:
+  - get_tested_pkgs
+  - test_to_text

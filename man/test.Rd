@@ -4,7 +4,14 @@
 \alias{test}
 \title{Run all tests for a given package}
 \usage{
-test(pkg, download = TRUE, cleanup = FALSE, dir = getwd(), repo = sctotests())
+test(
+  pkg,
+  download = TRUE,
+  cleanup = FALSE,
+  dir = getwd(),
+  repo = sctotests(),
+  testthat_colours = TRUE
+)
 }
 \arguments{
 \item{pkg}{package name as a string}
@@ -13,9 +20,14 @@ test(pkg, download = TRUE, cleanup = FALSE, dir = getwd(), repo = sctotests())
 
 \item{cleanup}{whether to delete testing folder}
 
-\item{dir}{directory to download tests to. This should have \code{pkg} at the end. If not present, it will be created.}
+\item{dir}{directory to download tests to. This should have \code{pkg} at the
+end. If not present, it will be created.}
 
 \item{repo}{storing the tests}
+
+\item{testthat_colours}{include coloured testthat output (the colours are
+implemented as particular characters in the output, which make it harder to
+read in some circumstances)}
 }
 \value{
 Object of class \code{validate_result}

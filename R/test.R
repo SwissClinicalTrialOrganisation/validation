@@ -9,8 +9,12 @@
 #' @param pkg package name as a string
 #' @param download whether to download a fresh set of tests
 #' @param cleanup whether to delete testing folder
-#' @param dir directory to download tests to. This should have \code{pkg} at the end. If not present, it will be created.
+#' @param dir directory to download tests to. This should have \code{pkg} at the
+#'   end. If not present, it will be created.
 #' @param repo storing the tests
+#' @param testthat_colours include coloured testthat output (the colours are
+#'   implemented as particular characters in the output, which make it harder to
+#'   read in some circumstances)
 #'
 #' @return Object of class \code{validate_result}
 #' @export
@@ -22,10 +26,15 @@ test <- function(pkg,
                  download = TRUE,
                  cleanup = FALSE,
                  dir = getwd(),
-                 repo = sctotests()){
+                 repo = sctotests(),
+                 testthat_colours = TRUE){
 
   package <- NULL
 
+  if(!testthat_colours){
+    options(crayon.enabled = FALSE)
+    on.exit(options(crayon.enabled = TRUE))
+  }
 
   if(!grepl(paste0(pkg, "$"), dir)) dir <- file.path(dir, pkg)
   if(!dir.exists(dir)) dir.create(dir, recursive = TRUE)
@@ -87,7 +96,10 @@ print.validate_result <- function(x, ...){
   cat(blue$bold("ISSUE NAME: \n"))
   cat(paste0("[Package test]: ", x$pkg, " version ", x$pkg_version, " \n\n"))
 
-  cat(blue$bold("### Name of the package you have validated: \n"))
+  cat(blue$bold("### Name \n"))
+  cat(x$who, "\n\n")
+
+  cat(blue$bold("### Name of the package you have validated \n"))
   cat(x$pkg, "\n\n")
 
   cat(blue$bold("### What version of the package have you validated? \n"))
@@ -139,7 +151,6 @@ print.validate_result <- function(x, ...){
   cat(blue$bold("### Where the test code is located in a git repository, add the git commit SHA\n"))
   cat(x$repo_sha)
 
-
 }
 
 
@@ -147,5 +158,6 @@ print.validate_result <- function(x, ...){
 # ses <- sessionInfo()
 # z <- list(session = ses)
 # print(z$session)
+
 
 

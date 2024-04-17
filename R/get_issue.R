@@ -4,6 +4,10 @@
 #'
 #' These functions provide various ways to interact with github issues.
 #'
+#' Open an issue:
+#'
+#' \code{post_issue} opens a new issue in a repository, with a defined body and title.
+#'
 #' Getting issues:
 #'
 #' \code{get_issue} downloads a single issue from a repository.

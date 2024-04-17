@@ -16,3 +16,12 @@ post_comment <- function(issue, comment, repo = sctoreports()){
      body = comment)
 }
 
+post_issue <- function(body, title, repo = sctoreports()){
+
+  gh(repo = repo,
+     endpoint = "POST /repos/:repo/issues",
+     .send_headers = list("X-GitHub-Api-Version" = "2022-11-28"),
+     body = body,
+     title = title)
+}
+

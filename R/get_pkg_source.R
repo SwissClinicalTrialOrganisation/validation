@@ -19,6 +19,8 @@
 #' @importFrom jsonlite read_json
 get_pkg_source <- function(pkg, ...){
 
+  package <- NULL
+
   pkginfo <- package_info(pkg, ...) |>
     filter(package == pkg)
 
