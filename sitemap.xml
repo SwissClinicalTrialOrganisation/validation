@@ -16,6 +16,9 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/news/index.html</loc>
+  </url>
+  <url>
     <loc>/reference/calculate_pkg_score.html</loc>
   </url>
   <url>
@@ -61,6 +64,9 @@
     <loc>/reference/get_repo_sha.html</loc>
   </url>
   <url>
+    <loc>/reference/get_tested_pkgs.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_tests.html</loc>
   </url>
   <url>
@@ -92,6 +98,9 @@
   </url>
   <url>
     <loc>/reference/test_skeleton.html</loc>
+  </url>
+  <url>
+    <loc>/reference/test_to_text.html</loc>
   </url>
   <url>
     <loc>/reference/update_pkg_table.html</loc>

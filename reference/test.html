@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">validation</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.4</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,6 +26,9 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
     <a class="dropdown-item" href="../articles/contribute.html">Contributing new tests</a>
   </div>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
@@ -54,7 +57,14 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">test</span><span class="op">(</span><span class="va">pkg</span>, download <span class="op">=</span> <span class="cn">TRUE</span>, cleanup <span class="op">=</span> <span class="cn">FALSE</span>, dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span>, repo <span class="op">=</span> <span class="fu"><a href="repos.html">sctotests</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">test</span><span class="op">(</span></span>
+<span>  <span class="va">pkg</span>,</span>
+<span>  download <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  cleanup <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  repo <span class="op">=</span> <span class="fu"><a href="repos.html">sctotests</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  testthat_colours <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -72,11 +82,18 @@
 
 
 <dt>dir</dt>
-<dd><p>directory to download tests to. This should have <code>pkg</code> at the end. If not present, it will be created.</p></dd>
+<dd><p>directory to download tests to. This should have <code>pkg</code> at the
+end. If not present, it will be created.</p></dd>
 
 
 <dt>repo</dt>
 <dd><p>storing the tests</p></dd>
+
+
+<dt>testthat_colours</dt>
+<dd><p>include coloured testthat output (the colours are
+implemented as particular characters in the output, which make it harder to
+read in some circumstances)</p></dd>
 
 </dl></div>
     <div class="section level2">
