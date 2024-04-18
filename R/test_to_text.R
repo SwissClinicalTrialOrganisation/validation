@@ -68,6 +68,7 @@ test_to_text <- function(x){
 
   issue_body <- paste0(
     issue_body,
+    "\n\n",
     "### Session info\n\n",
     x$session |> capture.output() |> paste(collapse = "\n"),
     "\n\n",
