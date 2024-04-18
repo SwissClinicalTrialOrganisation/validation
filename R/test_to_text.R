@@ -79,8 +79,7 @@ test_to_text <- function(x){
     x$repo_sha
   )
 
-  tags <- c("test", ":alarm_clock: triage :alarm_clock:")
-
+  tags <- c("test", ifelse(x$result, "PASS", "FAIL"))
 
   return(
     list(
