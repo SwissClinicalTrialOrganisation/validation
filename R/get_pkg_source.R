@@ -77,7 +77,7 @@ get_pkg_source <- function(pkg, ...){
     remote_sha <- "NA"
   }
   if(!any(universe, gh, git2r, cran)){
-    remote_repo <- "Unknown - enter manually"
+    remote_repo <- pkg_source
     remote_sha <- "NA"
   }
 
