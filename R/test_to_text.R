@@ -80,6 +80,9 @@ test_to_text <- function(x){
   )
 
   tags <- c("test", ifelse(x$result, "PASS", "FAIL"))
+  if(x$result){
+    tags <- c(tags, ":sparkles: approved :sparkles:")
+  }
 
   return(
     list(
