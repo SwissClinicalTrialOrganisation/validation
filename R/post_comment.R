@@ -4,6 +4,7 @@
 #'
 #' @rdname get_issue
 #' @importFrom gh gh
+#' @export
 #'
 #' @examples
 #' # post_comment(issue = 1, comment = "This is a test comment")
@@ -14,14 +15,5 @@ post_comment <- function(issue, comment, repo = sctoreports()){
      endpoint = "POST /repos/:repo/issues/:issue/comments",
      .send_headers = list("X-GitHub-Api-Version" = "2022-11-28"),
      body = comment)
-}
-
-post_issue <- function(body, title, repo = sctoreports()){
-
-  gh(repo = repo,
-     endpoint = "POST /repos/:repo/issues",
-     .send_headers = list("X-GitHub-Api-Version" = "2022-11-28"),
-     body = body,
-     title = title)
 }
 

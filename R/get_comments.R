@@ -2,6 +2,7 @@
 #' @param repo repository name
 #'
 #' @return a list of comments
+#' @export
 #' @rdname get_issue
 get_comments <- function(issue, repo = sctoreports()){
   comments <- gh(repo = repo,
