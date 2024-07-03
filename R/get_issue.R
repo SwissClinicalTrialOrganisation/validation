@@ -4,9 +4,12 @@
 #'
 #' These functions provide various ways to interact with github issues.
 #'
-#' Open an issue:
+#' Open/update an issue:
 #'
 #' \code{post_issue} opens a new issue in a repository, with a defined body and title.
+#'
+#' \code{update_issue} updates an existing issue in a repository (could also be used
+#' instead of \code{add_labels} or \code{close_issue}).
 #'
 #' Getting issues:
 #'
@@ -35,6 +38,8 @@
 #'
 #' These functions are primarily for the use in github actions rather than for
 #' the standard user.
+#'
+#' See https://docs.github.com/en/rest/issues/issues for full information.
 #'
 #' @param issue the issue number
 #' @param repo the repository to get the issue from
