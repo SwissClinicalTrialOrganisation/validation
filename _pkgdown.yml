@@ -20,6 +20,7 @@ reference:
   - test
   - test_skeleton
   - get_tests
+  - get_test_data
 
 - title: Functions primarily for use in GitHub actions
   desc: >
