@@ -2,6 +2,7 @@
 % Please edit documentation in R/test.R
 \name{test}
 \alias{test}
+\alias{print.validate_result}
 \title{Run all tests for a given package}
 \usage{
 test(
@@ -12,6 +13,8 @@ test(
   repo = sctotests(),
   testthat_colours = TRUE
 )
+
+\method{print}{validate_result}(x, ...)
 }
 \arguments{
 \item{pkg}{package name as a string}
@@ -28,6 +31,8 @@ end. If not present, it will be created.}
 \item{testthat_colours}{include coloured testthat output (the colours are
 implemented as particular characters in the output, which make it harder to
 read in some circumstances)}
+
+\item{...}{additional arguments (not used)}
 }
 \value{
 Object of class \code{validate_result}
