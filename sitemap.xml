@@ -64,6 +64,9 @@
     <loc>/reference/get_repo_sha.html</loc>
   </url>
   <url>
+    <loc>/reference/get_test_data.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_tested_pkgs.html</loc>
   </url>
   <url>

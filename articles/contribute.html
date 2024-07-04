@@ -26,7 +26,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">validation</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.5</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -158,10 +158,10 @@ a given function should be placed in a dedicated
 name.</p>
 <p>E.g.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"some meaningful message about the tests"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fl">1</span> <span class="op">+</span> <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_true</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">is.numeric</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_false</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">is.character</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"some meaningful message about the tests"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">+</span> <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">is.numeric</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_false</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">is.character</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <p>Where multiple tests are to be made on what could be a single object,
 it is often useful to create the object outside of the
@@ -170,19 +170,19 @@ different descriptive texts should be shown for the tests (e.g. perhaps
 the coefficients and standard errors from a model):</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">obj</span> <span class="op">&lt;-</span> <span class="fu">some_function</span><span class="op">(</span><span class="va">params</span><span class="op">)</span></span>
-<span><span class="fu">test_that</span><span class="op">(</span><span class="st">"test 1 on obj"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">obj</span><span class="op">$</span><span class="va">value_to_test</span>, <span class="va">expected_value</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"test 1 on obj"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">obj</span><span class="op">$</span><span class="va">value_to_test</span>, <span class="va">expected_value</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
-<span><span class="fu">test_that</span><span class="op">(</span><span class="st">"test 2 on obj"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">obj</span><span class="op">$</span><span class="va">another_value_to_test</span>, <span class="va">expected_value</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"test 2 on obj"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">obj</span><span class="op">$</span><span class="va">another_value_to_test</span>, <span class="va">expected_value</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <p>If objects are only useful to the test, they can be created within
 the <code>test_that</code> function.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"tests on obj"</span>, <span class="op">{</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"tests on obj"</span>, <span class="op">{</span></span>
 <span>  <span class="va">obj</span> <span class="op">&lt;-</span> <span class="fu">some_function</span><span class="op">(</span><span class="va">params</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">obj</span><span class="op">$</span><span class="va">value_to_test</span>, <span class="va">expected_value</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">obj</span><span class="op">$</span><span class="va">another_value_to_test</span>, <span class="va">expected_value</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">obj</span><span class="op">$</span><span class="va">value_to_test</span>, <span class="va">expected_value</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">obj</span><span class="op">$</span><span class="va">another_value_to_test</span>, <span class="va">expected_value</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <p>Making the description of the test meaningful is important, as it
 will help the user diagnose where the problem is.</p>
@@ -196,8 +196,8 @@ documentation</a>. We demonstrate a few examples below.</p>
 added to the testing file, for as many test cases as considered
 appropriate:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f works"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="va">y</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f works"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="va">y</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <p>Where f is the function to be tested, x are the input parameters for
 the function and y is the expected returned value.</p>
@@ -212,38 +212,38 @@ floating point comparisons. This can be done with the
 error, a warning or a message, the following corresponding code can be
 adapted, for as many test cases as considered appropriate:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f returns an error"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_error</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f returns an error"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_error.html" class="external-link">expect_error</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f returns a warning"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_warning</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f returns a warning"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_error.html" class="external-link">expect_warning</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f returns a message"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_message</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f returns a message"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_error.html" class="external-link">expect_message</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <p>Where f is the function to be tested, x are the arguments that define
 the conditions. Use the <code>regexp</code> argument to check for a
 particular error, warning or message.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f returns an error"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_error</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, regexp <span class="op">=</span> <span class="st">"some error message"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f returns an error"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_error.html" class="external-link">expect_error</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, regexp <span class="op">=</span> <span class="st">"some error message"</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <p>In contrast, to test whether the function runs without returning an
 error, a warning or a message, the following corresponding code can be
 adapted, for as many test cases as considered appropriate:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f runs without error"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_no_error</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f runs without error"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_no_error.html" class="external-link">expect_no_error</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f runs without a warning"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_warning</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f runs without a warning"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_error.html" class="external-link">expect_warning</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f runs without a message"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_message</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f runs without a message"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_error.html" class="external-link">expect_message</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -252,12 +252,12 @@ adapted, for as many test cases as considered appropriate:</p>
 <p>To test whether, under certain conditions, the function returns TRUE
 or FALSE, adapt the following code as appropriate:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f returns TRUE"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_true</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f returns TRUE"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f returns FALSE"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_false</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f returns FALSE"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_false</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <p>Where f is the function to be tested, x are the arguments that define
 the conditions.</p>
@@ -269,8 +269,8 @@ the conditions.</p>
 the following code can be adapted, for as many test cases as considered
 appropriate:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f returns NULL"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_null</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f returns NULL"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_null.html" class="external-link">expect_null</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -280,8 +280,8 @@ appropriate:</p>
 the following code can be adapted, for as many test cases as considered
 appropriate:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f returns object of type XXX"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_type</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="va">type</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f returns object of type XXX"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/inheritance-expectations.html" class="external-link">expect_type</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="va">type</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <p>Where f is the function to be tested, x are the arguments that define
 the conditions and type is any of the following: “integer”, “character”,
@@ -294,8 +294,8 @@ the conditions and type is any of the following: “integer”, “character”,
 following code can be adapted, for as many cases as considered
 appropriate:</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"function f returns object of class s3"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_s3_class</span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="va">class</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"function f returns object of class s3"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/inheritance-expectations.html" class="external-link">expect_s3_class</a></span><span class="op">(</span><span class="fu">f</span><span class="op">(</span><span class="va">x</span><span class="op">)</span>, <span class="va">class</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <p>Where f is the function to be tested, x are the arguments that define
 the conditions and class is, among others, any of the following:
@@ -310,15 +310,48 @@ functions in <code>testthat</code>.</p>
 <p>For example, the pivot functions we introduced to tidyr in version
 1.0.0. If we have tests on those functions, we can restrict them to
 versions 1.0.0 and above with the following code:</p>
-<pre><code><span><span class="fu">skip_if</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageVersion</a></span><span class="op">(</span><span class="st">"tidyr"</span><span class="op">)</span> <span class="op">&lt;</span> <span class="st">"1.0.0"</span><span class="op">)</span></span></code></pre>
+<pre><code><span><span class="fu"><a href="https://testthat.r-lib.org/reference/skip.html" class="external-link">skip_if</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/packageDescription.html" class="external-link">packageVersion</a></span><span class="op">(</span><span class="st">"tidyr"</span><span class="op">)</span> <span class="op">&lt;</span> <span class="st">"1.0.0"</span><span class="op">)</span></span></code></pre>
 <p>This line can be placed at the top of the test file, before any tests
 are run. The equivalent can be done for versions below a certain
 version, which might be useful for deprecated functions.</p>
 <p>It might be suitable to stop tests from being run if the internet is
 not available:</p>
-<pre><code><span><span class="fu">skip_if_offline</span><span class="op">(</span><span class="op">)</span></span></code></pre>
+<pre><code><span><span class="fu"><a href="https://testthat.r-lib.org/reference/skip.html" class="external-link">skip_if_offline</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
 <p>Or if a package can only be run on a specific operating system:</p>
-<pre><code><span><span class="fu">skip_on_os</span><span class="op">(</span><span class="st">"mac"</span><span class="op">)</span></span></code></pre>
+<pre><code><span><span class="fu"><a href="https://testthat.r-lib.org/reference/skip.html" class="external-link">skip_on_os</a></span><span class="op">(</span><span class="st">"mac"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="using-data-in-tests">Using data in tests<a class="anchor" aria-label="anchor" href="#using-data-in-tests"></a>
+</h3>
+<p>It is often necessary to use data in tests. R includes a number of
+built-in datasets that can be used for this purpose (e.g. iris,
+mtcars).</p>
+<p>The <a href="https://doi.org/10.32614/CRAN.package.medicaldata" class="external-link">medicaldata</a>{target
+= “_blank”} R package also contains a number of datasets, primarily from
+published sources.</p>
+<p>The SCTO validation platform also has a <a href="https://github.com/SwissClinicalTrialOrganisation/validation_tests/tree/main/datasets" class="external-link">location
+for additional datasets</a>{target = “_blank”}, which may also be
+used.</p>
+<p>In order to access datasets within tests, the
+<code>get_test_data</code> function can be used in the
+<code>setup-pkg.R</code> file. Suppose we want to use the
+<code>mtcars.csv</code> dataset from the repository. We might use the
+following setup-stats.R file:</p>
+<pre><code><span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va">stats</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"stats"</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">stats</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://testthat.r-lib.org" class="external-link">testthat</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/get_test_data.html">get_test_data</a></span><span class="op">(</span><span class="st">"mtcars.csv"</span><span class="op">)</span></span>
+<span><span class="va">mtcars</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="st">"mtcars.csv"</span><span class="op">)</span></span>
+<span><span class="fu">withr</span><span class="fu">::</span><span class="fu"><a href="https://withr.r-lib.org/reference/defer.html" class="external-link">defer</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>  <span class="co"># most of the time, we would want to detach packages, in this case we don't</span></span>
+<span>  <span class="co"># detach(package:stats)</span></span>
+<span><span class="op">}</span>, <span class="fu"><a href="https://testthat.r-lib.org/reference/teardown_env.html" class="external-link">teardown_env</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<p>We do not need to worry about the location the file is saved to as
+the <code>test</code> function, via <code>testthat</code>, sets the
+working directory to the package-tests directory.</p>
+<p>Where a new dataset might be useful when testing multiple packages,
+it can be added to the datasets folder in the validation_tests
+repository via a pull request.</p>
 </div>
 </div>
 <div class="section level2">
@@ -336,7 +369,7 @@ to our computer and we are within that project.</p>
 <code>test_skeleton</code> function. We only want to test the
 <code>lm</code> function, so we only pass that to the second
 argument:</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/test_skeleton.html">test_skeleton</a></span><span class="op">(</span><span class="st">"stats"</span>, <span class="st">"lm"</span><span class="op">)</span></span></code></pre></div>
 <p>This will have created a <code>stats</code> folder within inst/tests.
 Within that folder, there will be files called <code>info.txt</code>,
@@ -381,8 +414,8 @@ define them in the setup file.</p>
 <p>Suppose that we know that the coefficient for <code>mpg ~ cyl</code>
 is known (-2.88 for the linear effect). We can write a test that checks
 that expectation:</p>
-<pre><code><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"lm returns the expected coefficients"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="op">-</span><span class="fl">2.88</span><span class="op">)</span></span>
+<pre><code><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"lm returns the expected coefficients"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="op">-</span><span class="fl">2.88</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre>
 <p>Due to floating point precision, this is probably insufficient - R
 will not return exactly -2.88. We can use the <code>tolerance</code>
@@ -390,30 +423,30 @@ argument to check that the coefficient is within a certain range (we
 could also round the coefficient). We also need to tell
 <code>expect_equal</code> to ignore the names attribute of the vector,
 otherwise it compares the whole object, attributes and all:</p>
-<pre><code><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"lm returns the expected coefficients"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="op">-</span><span class="fl">2.88</span>, tolerance <span class="op">=</span> <span class="fl">0.01</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<pre><code><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"lm returns the expected coefficients"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="op">-</span><span class="fl">2.88</span>, tolerance <span class="op">=</span> <span class="fl">0.01</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre>
 <p>We can do the same for the coefficients from the model with
 <code>cyl_f</code>. This time, we can derive the values from the
 <code>tapply</code> function as, in this case, the coefficients are just
 the means:</p>
-<pre><code><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"lm returns the expected coefficients"</span>, <span class="op">{</span></span>
+<pre><code><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"lm returns the expected coefficients"</span>, <span class="op">{</span></span>
 <span>  <span class="va">means</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tapply.html" class="external-link">tapply</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">mpg</span>, <span class="va">mtcars</span><span class="op">$</span><span class="va">cyl</span>, <span class="va">mean</span><span class="op">)</span></span>
 <span>  <span class="va">coefs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fmod</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre>
 <p>We have now performed 4 tests (the expectations) in two
 <code>test_that</code> calls. We can also combine them together:</p>
-<pre><code><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"lm returns the expected coefficients"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="op">-</span><span class="fl">2.88</span>, tolerance <span class="op">=</span> <span class="fl">0.01</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<pre><code><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"lm returns the expected coefficients"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="op">-</span><span class="fl">2.88</span>, tolerance <span class="op">=</span> <span class="fl">0.01</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span>  </span>
 <span>  <span class="va">means</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tapply.html" class="external-link">tapply</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">mpg</span>, <span class="va">mtcars</span><span class="op">$</span><span class="va">cyl</span>, <span class="va">mean</span><span class="op">)</span></span>
 <span>  <span class="va">coefs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fmod</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre>
 <p>Whether to put them in one or two calls is up to the author.
 Distributing them across more calls helps identify which tests fail, but
@@ -464,12 +497,12 @@ the version of the reference software.</p>
 <p>We can then use the SE values from Stata in the tests, specifying a
 suitable tolerance (it’s pretty simple to calculate, so we can be quite
 stringent):</p>
-<pre><code><span><span class="fu">test_that</span><span class="op">(</span><span class="st">"Standard errors from LM are correct"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">0.322408</span>, </span>
+<pre><code><span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"Standard errors from LM are correct"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">0.322408</span>, </span>
 <span>               tolerance <span class="op">=</span> <span class="fl">0.00001</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">1.558348</span>, </span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">1.558348</span>, </span>
 <span>               tolerance <span class="op">=</span> <span class="fl">0.00001</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">3</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">1.298623</span>, </span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">3</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">1.298623</span>, </span>
 <span>               tolerance <span class="op">=</span> <span class="fl">0.0001</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre>
 </div>
@@ -481,6 +514,7 @@ stringent):</p>
 <span><span class="co"># Consider the type of function:</span></span>
 <span><span class="co">#   - is it deterministic or statistic?</span></span>
 <span><span class="co">#   - is it worth checking for errors/warnings under particular conditions?</span></span>
+<span><span class="fu"><a href="https://testthat.r-lib.org/reference/local_edition.html" class="external-link">local_edition</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">)</span></span>
 <span><span class="va">mtcars</span><span class="op">$</span><span class="va">cyl_f</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">cyl</span><span class="op">)</span></span>
@@ -488,14 +522,14 @@ stringent):</p>
 <span><span class="va">cmod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">cyl</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
 <span><span class="va">fmod</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">mpg</span> <span class="op">~</span> <span class="va">cyl_f</span>, data <span class="op">=</span> <span class="va">mtcars</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">test_that</span><span class="op">(</span><span class="st">"lm returns the expected coefficients"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="op">-</span><span class="fl">2.88</span>, tolerance <span class="op">=</span> <span class="fl">0.01</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"lm returns the expected coefficients"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="op">-</span><span class="fl">2.88</span>, tolerance <span class="op">=</span> <span class="fl">0.01</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span>  </span>
 <span>  <span class="va">means</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tapply.html" class="external-link">tapply</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">mpg</span>, <span class="va">mtcars</span><span class="op">$</span><span class="va">cyl</span>, <span class="va">mean</span><span class="op">)</span></span>
 <span>  <span class="va">coefs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html" class="external-link">coef</a></span><span class="op">(</span><span class="va">fmod</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">coefs</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span>, <span class="va">means</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span> <span class="op">-</span> <span class="va">means</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, check.attributes <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># write.csv(mtcars, "mtcars.csv", row.names = FALSE)</span></span>
@@ -535,12 +569,12 @@ stringent):</p>
 <span><span class="co">#        _cons |   26.66364   .9718008    27.44   0.000     24.67608    28.65119</span></span>
 <span><span class="co"># ------------------------------------------------------------------------------</span></span>
 <span></span>
-<span><span class="fu">test_that</span><span class="op">(</span><span class="st">"Standard errors from lm are correct"</span>, <span class="op">{</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">0.322408</span>, </span>
+<span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"Standard errors from lm are correct"</span>, <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">cmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">0.322408</span>, </span>
 <span>               tolerance <span class="op">=</span> <span class="fl">0.0001</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">1.558348</span>, </span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">1.558348</span>, </span>
 <span>               tolerance <span class="op">=</span> <span class="fl">0.0001</span><span class="op">)</span></span>
-<span>  <span class="fu">expect_equal</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">3</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">1.298623</span>, </span>
+<span>  <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">fmod</span><span class="op">)</span><span class="op">$</span><span class="va">coefficients</span><span class="op">[</span><span class="fl">3</span>, <span class="fl">2</span><span class="op">]</span>, <span class="fl">1.298623</span>, </span>
 <span>               tolerance <span class="op">=</span> <span class="fl">0.0001</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre>
 <p>For <code>lm</code>, other things that might be tested include the
@@ -595,7 +629,7 @@ case, we don’t want to detach it, as it is a standard package.</p>
 </h3>
 <p>Assuming the tests are in a folder called <code>stats</code>, which
 is within out current working directory, we can run the tests with:</p>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">validation</span><span class="fu">::</span><span class="fu"><a href="../reference/test.html">test</a></span><span class="op">(</span><span class="st">"stats"</span>, download <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p>We specify <code>download = FALSE</code> because
 <code><a href="../reference/test.html">validation::test</a></code> will download the files from GitHub and
