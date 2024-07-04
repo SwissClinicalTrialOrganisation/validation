@@ -234,10 +234,10 @@ skip_on_os("mac")
 It is often necessary to use data in tests. R includes a number of built-in datasets 
 that can be used for this purpose (e.g. iris, mtcars). 
 
-The [medicaldata](https://doi.org/10.32614/CRAN.package.medicaldata){target = "_blank"} 
+The [medicaldata](https://doi.org/10.32614/CRAN.package.medicaldata)
 R package also contains a number of datasets, primarily from published sources.
 
-The SCTO validation platform also has a [location for additional datasets](https://github.com/SwissClinicalTrialOrganisation/validation_tests/tree/main/datasets){target = "_blank"}, 
+The SCTO validation platform also has a [location for additional datasets](https://github.com/SwissClinicalTrialOrganisation/validation_tests/tree/main/datasets), 
 which may also be used. 
 
 In order to access datasets within tests, the `get_test_data` function can be 
