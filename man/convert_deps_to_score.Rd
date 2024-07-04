@@ -2,16 +2,18 @@
 % Please edit documentation in R/convert_deps_to_score.R
 \name{convert_deps_to_score}
 \alias{convert_deps_to_score}
-\title{Convert number of dependencies to a score
-The score is based on the approach by the riskmetric package. It is based on
-a logistic curve.}
+\title{Convert number of dependencies to a score}
 \usage{
 convert_deps_to_score(deps)
 }
 \arguments{
-\item{downloads}{number of downloads}
+\item{deps}{number of dependencies}
 }
 \description{
+The score is based on the approach by the riskmetric package. It is based on
+a logistic curve.
+}
+\details{
 See \href{https://pharmar.github.io/riskmetric/reference/metric_score.pkg_metric_dependencies.html}{riskmetric documentation} for further details.
 }
 \seealso{

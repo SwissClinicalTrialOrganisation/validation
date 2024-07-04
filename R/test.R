@@ -91,8 +91,10 @@ test <- function(pkg,
   if(cleanup) unlink(dir, recursive = TRUE)
 }
 
+#' Print method for the output from `test`
 #' @rdname test
 #' @export
+#' @param x a validate_result object (the output from `test`)
 #' @param ... additional arguments (not used)
 #' @importFrom crayon blue bold
 print.validate_result <- function(x, ...){

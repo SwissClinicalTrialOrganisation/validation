@@ -32,6 +32,8 @@ end. If not present, it will be created.}
 implemented as particular characters in the output, which make it harder to
 read in some circumstances)}
 
+\item{x}{a validate_result object (the output from `test`)}
+
 \item{...}{additional arguments (not used)}
 }
 \value{
