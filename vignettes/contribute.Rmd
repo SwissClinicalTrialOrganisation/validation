@@ -229,6 +229,39 @@ Or if a package can only be run on a specific operating system:
 skip_on_os("mac")
 ```
 
+### Using data in tests
+
+It is often necessary to use data in tests. R includes a number of built-in datasets 
+that can be used for this purpose (e.g. iris, mtcars). 
+
+The [medicaldata](https://doi.org/10.32614/CRAN.package.medicaldata){target = "_blank"} 
+R package also contains a number of datasets, primarily from published sources.
+
+The SCTO validation platform also has a [location for additional datasets](https://github.com/SwissClinicalTrialOrganisation/validation_tests/tree/main/datasets){target = "_blank"}, 
+which may also be used. 
+
+In order to access datasets within tests, the `get_test_data` function can be 
+used in the `setup-pkg.R` file. Suppose we want to use the `mtcars.csv` dataset 
+from the repository. We might use the following setup-stats.R file:
+
+```
+if(!require(stats)) install.packages("stats")
+library(stats)
+library(testthat)
+get_test_data("mtcars.csv")
+mtcars <- read.csv("mtcars.csv")
+withr::defer({
+  # most of the time, we would want to detach packages, in this case we don't
+  # detach(package:stats)
+}, teardown_env())
+```
+
+We do not need to worry about the location the file is saved to as the `test` function,
+via `testthat`, sets the working directory to the package-tests directory.
+
+Where a new dataset might be useful when testing multiple packages, it can be added 
+to the datasets folder in the validation_tests repository via a pull request.
+
 
 ## Worked example
 
@@ -386,6 +419,7 @@ The test file including the tests above is then:
 # Consider the type of function:
 #   - is it deterministic or statistic?
 #   - is it worth checking for errors/warnings under particular conditions?
+local_edition(3)
 
 data(mtcars)
 mtcars$cyl_f <- factor(mtcars$cyl)
