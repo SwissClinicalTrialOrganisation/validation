@@ -24,8 +24,7 @@
 #' get_test_data("mtcars.csv")
 #' dat <- read.csv("mtcars.csv")
 #'
-#' withr::defer({
-#' ...
+#' withr::defer({})
 #' }
 #'
 #'
