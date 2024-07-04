@@ -91,6 +91,7 @@ test <- function(pkg,
   if(cleanup) unlink(dir, recursive = TRUE)
 }
 
+#' @rdname test
 #' @export
 #' @param ... additional arguments (not used)
 #' @importFrom crayon blue bold
