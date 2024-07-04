@@ -1,3 +1,7 @@
+# validation 0.3.6
+
+* improved support for datasets stored in the validation_tests repository via `get_test_data`
+
 # validation 0.3.5
 
 * where installation location is unknown, the package source as reported by sessioninfo will be returned (primarily to assist in debugging).
