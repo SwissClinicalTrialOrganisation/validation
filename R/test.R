@@ -56,7 +56,7 @@ test <- function(pkg,
   pkgversion <- pkgdat$loadedversion
 
   user <- try(gh::gh_whoami()$login)
-  if(inherits(user, "try-error")) user <- try(Sys.info()$user)
+  if(inherits(user, "try-error")) user <- try(Sys.info()[["user"]])
   if(inherits(user, "try-error")) user <- "Unknown (probably GitHub Action bot)"
 
   now <- Sys.time()
