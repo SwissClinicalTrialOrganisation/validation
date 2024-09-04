@@ -30,7 +30,7 @@
 get_n_deps <- function(package, fields = c("Depends", "Imports"), ...){
   if(length(package) > 1) stop("Only one package at a time...")
 
-  dsc <- packageDescription(package, fields, ...)
+  dsc <- packageDescription(package, fields = fields, ...)
   deps <- lapply(dsc, strsplit, split = ",") |>
     unlist() |>
     trimws()
