@@ -1,3 +1,10 @@
+# validation 0.3.7
+
+Bug fix: 
+
+* get_n_deps passed the fields argument to the wrong argument in packageDescription, resulting in a error.
+* test for base packages was not working correctly, as the location of the package was not determined correctly.
+
 # validation 0.3.6
 
 * improved support for datasets stored in the validation_tests repository via `get_test_data`

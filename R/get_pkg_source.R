@@ -21,7 +21,11 @@ get_pkg_source <- function(pkg, ...){
 
   package <- NULL
 
-  pkginfo <- package_info(pkg, ...) |>
+  base <- pkg %in% c("base", "compiler", "datasets", "graphics", "grDevices",
+                     "grid", "methods", "parallel", "splines", "stats", "stats4",
+                     "tcltk", "tools", "translations", "utils")
+
+  pkginfo <- package_info(pkg, include_base = base, ...) |>
     filter(package == pkg)
 
   pkg_source <- pkginfo$source
