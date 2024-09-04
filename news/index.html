@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">validation</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.7</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,6 +36,12 @@
       <small>Source: <a href="https://github.com/SwissClinicalTrialOrganisation/validation/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.3.7" id="validation-037">validation 0.3.7<a class="anchor" aria-label="anchor" href="#validation-037"></a></h2>
+<p>Bug fix:</p>
+<ul><li>get_n_deps passed the fields argument to the wrong argument in packageDescription, resulting in a error.</li>
+<li>test for base packages was not working correctly, as the location of the package was not determined correctly.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.3.6" id="validation-036">validation 0.3.6<a class="anchor" aria-label="anchor" href="#validation-036"></a></h2>
 <ul><li>improved support for datasets stored in the validation_tests repository via <code>get_test_data</code>
